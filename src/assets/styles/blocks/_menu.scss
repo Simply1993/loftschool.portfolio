@@ -1,0 +1,33 @@
+.menu {
+
+}
+
+.menu__list {
+	display: flex;
+}
+
+.menu__item {
+	display: inline-block;
+	flex: 1 0 auto;
+	border-right: 2px solid rgba($white, .5);
+	&:last-child {
+		border-right: none;
+	}
+}
+
+.menu__link {
+	display: block;
+	text-align: center;
+	padding: 15px 0;
+	text-decoration: none;
+	transition: .3s;
+	color: $white;
+	background-color: $pale-green;
+	&:hover {
+		background-color: $green;
+	}
+}
+
+.welcome__menu {
+
+}

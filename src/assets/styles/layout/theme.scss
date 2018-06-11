@@ -1,0 +1,35 @@
+.title {
+	font-family: $font-title;
+	color: $title-color;
+}
+
+.title-h1 {
+	@extend .title;
+	font-size: 63px;
+	margin: 70px 0;
+}
+
+.title-h2 {
+	@extend .title;
+	font-size: 35px;
+	margin: 40px 0;
+}
+
+a {
+	color: $link;
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.center-block {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

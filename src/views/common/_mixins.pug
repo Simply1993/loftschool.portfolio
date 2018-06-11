@@ -4,3 +4,18 @@ mixin icon(iconName, iconClass)
 
 mixin image(imagePath, imageAlt, imageClass)
   img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+
+mixin social(socialItems, className, mod)
+  div(class=`${className} ${mod}`)
+    ul(class=`${className}__list`)
+      each value, key in socialItems
+        li(class=`${className}__item`)
+          a(class=`${className}__link` href=`${value}` target="_blank")
+            +icon(`${key}`, `${className}__icon`)
+
+mixin menu(items, className, mod)
+  nav(class=`${className} ${mod}`)
+    ul(class=`${className}__list`)
+      each item in items
+        li(class=`${className}__item`)
+          a(class=`${className}__link` href=`${item[0]}`)= item[1]

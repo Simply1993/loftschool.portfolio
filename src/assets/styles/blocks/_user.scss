@@ -1,0 +1,26 @@
+.user {
+
+}
+
+.user__photo {
+	height: 141px;
+	width: 141px;
+	margin: 0 auto 15px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: top center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.user__title {
+	font-size: 28px;
+}
+
+.user__description {
+	opacity: .8;
+}
+
+.welcome__user {
+	margin-bottom: 30px;
+}

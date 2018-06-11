@@ -1,6 +1,21 @@
 extends ../auth.layout.pug
 
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+  .main-section
+    .container
+      header.header
+        .header__left
+        .header__right
+          .btn.btn--rounded Авторизоваться
+      .center-block
+        .welcome
+          .welcome__box
+            .user.welcome__user
+              .user__photo(style="background-image: url('./assets/images/photo.jpg');")
+              .user__title Евгений Щербаков
+              .user__description Личный сайт веб-разработчика
+            +social(socials, 'socials', 'welcome__social')
+            +menu([['/works.html', 'Мои работы'], ['/about.html', 'Обо мне'], ['/blog.html', 'Блог']], 'menu', 'welcome__menu')
+  footer.footer
+    .copyright.copyright--transparent
+      p.copyright__text!= "&copy Евгений Щербаков | создано с любовью в Loftschool | 2018"

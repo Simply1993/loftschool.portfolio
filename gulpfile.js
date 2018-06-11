@@ -21,7 +21,7 @@ gulp.task("styles", () => {
     .pipe($gp.postcss(require("./postcss.config")))
     .pipe($gp.rename("main.min.css"))
     .pipe($gp.if(env === "development", $gp.sourcemaps.write()))
-    .pipe(gulp.dest(`${config.DIST_DIR}`))
+    .pipe(gulp.dest(`${config.DIST_DIR}/assets/css/`))
     .pipe(reload({ stream: true }));
 });
 
@@ -43,7 +43,7 @@ gulp.task("scripts", () => {
     .src(`${config.SRC_DIR}/scripts/*.js`)
     .pipe($gp.plumber())
     .pipe($webpack(require("./webpack.mpa.config"), webpack))
-    .pipe(gulp.dest(`${config.DIST_DIR}`))
+    .pipe(gulp.dest(`${config.DIST_DIR}/assets/js/`))
     .pipe(reload({ stream: true }));
 });
 
