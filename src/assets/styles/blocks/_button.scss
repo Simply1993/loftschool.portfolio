@@ -1,0 +1,23 @@
+.btn {
+	display: inline-block;
+	padding: 10px 25px;
+	background-color: $pale-green;
+	font-weight: 500;
+	color: $white;
+	font-size: 16px;
+	transition: .3s;
+	text-decoration: none;
+	&:hover {
+		background-color: $green;
+		cursor: pointer;
+	}
+}
+
+.btn--view--rounded {
+	background-color: transparent;
+	border: 1px solid $white;
+	border-radius: 22px;
+	&:hover {
+		border-color: #729e19;
+	}
+}

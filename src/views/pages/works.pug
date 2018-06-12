@@ -1,0 +1,79 @@
+extends ../main.layout.pug
+
+block variables
+    - var title = 'Мои работы'
+
+block scripts
+    script(src='./assets/js/works.bundle.js')
+
+block content
+    section.hero
+        .container
+            include ../common/header
+            .hero__content
+                .section-title.section-title--bg--portfolio
+                +user('./assets/images/photo.jpg', 'Евгений Щербаков', 'Личный сайт веб разработчика', 'hero__user')
+            button.btn-down.hero__btn
+                +icon('arrow_down', 'btn-down__icon')
+    section.works
+        .works__content
+            .works-title
+                h1.title-h1.title-h1--works= title
+            .works__slider
+                .slider
+                    ul.slider__list
+                        li.slider__item
+                            .slider__item-left
+                                .slider__item-description
+                                    h2.title-h2.slider__item-title Сайт школы онлайн образования
+                                    .slider__item-techonologies
+                                    a.btn Посмотреть сайт
+                            .slider__item-right
+                                .slider__item-right-top
+                                    .slider__item-image
+                                        img.slider__item-image-pic
+                                .slider__item-right-bot
+                                    .slider__item-nav
+                                        .slider__item-prev
+                                        .slider__item-next
+    section.about-me
+        .about-me__content
+            .about-me-title
+                h2.title-h2.title-h2--about-me Что обо мне говорят
+            .reviews
+                ul.reviews__list
+                    li.reviews__item
+                        .reviews__photo
+                            img.reviews__photo-pic
+                        .reviews__description
+                            .reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                            .reviews__author
+                                .reviews__author-name Ковальчук Дмитрий
+                                .reviews__author_post основатель Loftschool
+                    li.reviews__item
+                        .reviews__photo
+                            img.reviews__photo-pic
+                        .reviews__description
+                            .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                            .reviews__author
+                                .reviews__author-name Сабанцев Владимир
+                                .reviews__author_post преподаватель
+    section.form
+        form.form__area(action='/', method='post')
+            .form__fields
+                .form__title Связаться со мной
+                .form__row
+                    .form__field
+                        label.form__label.form__label_input Имя
+                        input.form__input-text(type='text', placeholder='Имя')
+                .form__row
+                    .form__field
+                        label.form__label.form__label_input Email
+                        input.form__input-text(type='text', placeholder='Email')
+                .form__row
+                    .form__field
+                        label.form__label.form__label_input Ваше сообщение
+                        textarea.form__input-text.form__input-text_textarea(placeholder='Ваше сообщение')
+                .form__row
+                    button.form__button-submit(type='submit') отправить
+                    button.form__button-clear(type='clear') очистить

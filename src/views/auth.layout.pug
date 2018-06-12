@@ -1,3 +1,4 @@
+include ./common/_variables
 include ./common/_mixins
 
 doctype html
@@ -6,11 +7,10 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | welcome page
-    link(rel="stylesheet", href="main.min.css")
+    title Portfolio | Welcome page
+    link(rel="stylesheet", href="./assets/css/main.min.css")
   body
-    
     block content
 
-    script(src="bootloader.bundle.js")
-    script(src="auth.bundle.js")
+    script(src="./assets/js/bootloader.bundle.js")
+    script(src="./assets/js/auth.bundle.js")

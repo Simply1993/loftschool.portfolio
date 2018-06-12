@@ -1,0 +1,39 @@
+.user {
+	position: relative;
+	text-align: center;
+	color: $white;
+}
+
+.user__photo {
+	height: 141px;
+	width: 141px;
+	margin: 0 auto 15px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: top center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.user__title {
+	font-size: 35px;
+	font-weight: 500;
+}
+
+.user__text {
+
+}
+
+.welcome__user {
+	margin-bottom: 30px;
+	.user__title {
+		font-size: 28px;
+	}
+	.user__text {
+		opacity: .8;
+	}
+}
+
+.hero__user {
+	z-index: 1;
+}

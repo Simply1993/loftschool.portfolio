@@ -1,0 +1,52 @@
+extends ../main.layout.pug
+
+block variables
+    - var title = 'Блог'
+
+block scripts
+    script(src='./assets/js/blog.bundle.js')
+
+block content
+    section.hero.hero--blog
+        .container
+            include ../common/header
+            .hero__content
+                .user
+                    .user__photo(style="background-image: url('./assets/images/photo.jpg');")
+                .hero__description
+                    .section-title.section-title--bg--blog
+                    .hero__title
+                        h1.title-h1.title-h1--color--white= title
+                    .hero__subtitle Статьи, которые я писал
+
+    section.blog
+        +triangles('')
+        aside.blog__sidebar
+            .nav-blog
+                ul.nav-blog__list
+                    li.nav-blog__item.nav-blog__item--active
+                        a.nav-blog__link(href="#") Самое важное в SASS
+                    li.nav-blog__item
+                        a.nav-blog__link(href="#") Приёмы в вёрстке, без которых не обходится ни один сайт
+                    li.nav-blog__item
+                        a.nav-blog__link(href="#") Самый необходимый набор Gulp плагинов
+                    li.nav-blog__item
+                        a.nav-blog__link(href="#") Почему я выбрал Jade
+
+        main.blog__content
+            section.articles
+                article.articles__item
+                    header.articles__item-header
+                        h2.title-h2.articles__item-title Самое важное в SASS
+                        time.articles__item-date 22 ноября 2016
+                    .articles__item-content.text-content
+                        p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                        p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                        p!= '<pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #006600; font-style: italic;">//присвоить</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">$<span style="color: #009900;">&#40;</span>document<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">data</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">\'prop\'</span><span style="color: #339933;">,</span> <span style="color: #009900;">&#123;</span> anything<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;любой объект&quot;</span> <span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #006600; font-style: italic;">//прочитать</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">alert<span style="color: #009900;">&#40;</span> $<span style="color: #009900;">&#40;</span>document<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">data</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">\'prop\'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span>anything <span style="color: #009900;">&#41;</span> <span style="color: #006600; font-style: italic;">//любой объект</span></div></li></ol></pre>'
+                article.articles__item
+                    header.articles__item-header
+                        h2.title-h2.articles__item-title Приёмы в вёрстке, без которых не обходится ни один сайт
+                        time.articles__item-date 13 ноября 2016
+                    .articles__item-content.text-content
+                        p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                        p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.

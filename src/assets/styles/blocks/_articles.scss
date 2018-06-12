@@ -1,0 +1,21 @@
+.articles {
+
+}
+
+.articles__item {
+	text-align: left;
+	padding-bottom: 60px;
+	border-bottom: 5px solid #ecebe4;
+	margin-bottom: 50px;
+	&:last-child {
+		padding-bottom: 0;
+		border-bottom: none;
+	}
+}
+
+.articles__item-date {
+	display: inline-block;
+	opacity: .7;
+	color: $green;
+	margin-bottom: 20px;
+}

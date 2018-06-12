@@ -1,8 +1,10 @@
 module.exports = {
-  white: "#efeee9",
-  beige: "#eeebdf",
-  green: "#16c2aa",
-  "text-color": "#455a64",
-  grey: "#373e42",
-  "light-grey": "#dfdcd5"
+  white: "#ffffff",
+  "pale-green": "#6c9c5a",
+  green: "#4e8839",
+  link: "#6da3bd",
+  "text-color": "#566358",
+  "title-color": "#373e42",
+  "font-title": "Sansus, Helvetica, sans-serif",
+  "font-text": "Roboto, Helvetica, ssans-serif"
 };
