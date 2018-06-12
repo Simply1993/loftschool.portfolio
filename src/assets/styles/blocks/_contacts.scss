@@ -27,6 +27,11 @@
 }
 
 .contacts__item-title {
+	color: $text-color;
 	display: inline-block;
 	font-weight: 500;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
 }

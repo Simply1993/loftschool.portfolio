@@ -13,10 +13,10 @@ block content
       .hero__content
         .section-title.section-title--bg--portfolio
         +user('./assets/images/photo.jpg', 'Евгений Щербаков', 'Личный сайт веб разработчика', 'hero__user')
-      button.btn-down.hero__btn
+      a.btn-down.hero__btn
         +icon('arrow_down', 'btn-down__icon')
 
-  section.about
+  main.about
     +triangles('triangles--about')
     .about__left
       .about__left-content
@@ -39,7 +39,7 @@ block content
             br
             |  вам полезен
         .about__right-description.text-content
-          p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+          p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
 
           .skills
             ul.skills-list
@@ -59,11 +59,11 @@ block content
     .map__content
       .contacts
         .contacts__title
-          .title-h2 Контакты
+          h2.title-h2 Контакты
         address.contacts__content
           ul.contacts__list
             each item in contacts
               li.contacts__item
                 .contacts__item-icon
                   +icon(`${item[0]}`, 'contacts__item-icon-img')
-                .contacts__item-title #{item[1]}
+                a.contacts__item-title(href=(item[2] != '') ? `${item[2]}` : '#') #{item[1]}

@@ -10,8 +10,8 @@
 .nav-blog__item {
 	padding: 15px 20px 15px 0;
 	position: relative;
-	transition: .3s;
 	&:after {
+		transition: .3s;
 		content: '';
 		top: 0;
 		position: absolute;
@@ -20,11 +20,20 @@
 		background-color: transparent;
 		width: 3px;
 	}
+	&:hover {
+		.nav-blog__link {
+			color: $green;
+		}
+		&:after {
+			background-color: $green;
+		}
+	}
 }
 
 .nav-blog__link {
 	color: $text-color;
 	text-decoration: none;
+	transition: .3s;
 }
 
 .nav-blog__item--active {
