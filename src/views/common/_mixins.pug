@@ -1,9 +1,9 @@
 mixin icon(iconName, iconClass)
   svg(class=`${iconClass}`)
-    use(xlink:href=`/assets/images/icons/sprite.svg#${iconName}`)
+    use(xlink:href=`./assets/images/icons/sprite.svg#${iconName}`)
 
 mixin image(imagePath, imageAlt, imageClass)
-  img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+  img(src=`./assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
 
 mixin social(socialItems, className, mod)
   div(class=`${className} ${mod}`)
