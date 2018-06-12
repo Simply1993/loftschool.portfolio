@@ -7,4 +7,63 @@ block scripts
   script(src='./assets/js/about.bundle.js')
 
 block content
-  h1 Страничка "Обо Мне"
+  section.hero
+    .container
+      include ../common/header
+      .hero__content
+        .section-title.section-title--bg--portfolio
+        +user('./assets/images/photo.jpg', 'Евгений Щербаков', 'Личный сайт веб разработчика', 'hero__user')
+      button.btn-down.hero__btn
+        +icon('arrow_down', 'btn-down__icon')
+
+  section.about
+    +triangles('triangles--about')
+    .about__left
+      .about__left-content
+        .about__left-title
+          h1.title-h1.title-h1--about= title
+        .user-profile
+          .user-profile__image
+            img(src="./assets/images/photo.jpg" alt="фотография").user-profile__avatar
+          .user-profile__description
+            .user-profile__title
+              h2.title-h2 Кто я
+            .user-profile__text.text-content
+              p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+    .about__right
+      .about__right-content
+        .about__right-title
+          .title-h2
+            | Чем я могу быть
+            br
+            |  вам полезен
+        .about__right-description.text-content
+          p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+
+          .skills
+            ul.skills-list
+              each skillsrow in skills
+                li.skills-list__item.skills-row
+                  .skills-row__title #{skillsrow[0]}
+                  ul.skills-row__list
+                    each skill in skillsrow[1]
+                      li.skills-row__item
+                        figure.skill
+                          svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle_above
+                          .skill__title #{skill[0]}
+  section.map
+    .google-map
+    .map__content
+      .contacts
+        .contacts__title
+          .title-h2 Контакты
+        address.contacts__content
+          ul.contacts__list
+            each item in contacts
+              li.contacts__item
+                .contacts__item-icon
+                  +icon(`${item[0]}`, 'contacts__item-icon-img')
+                .contacts__item-title #{item[1]}

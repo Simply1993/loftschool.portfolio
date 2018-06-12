@@ -1,0 +1,36 @@
+.about {
+	position: relative;
+	display: flex;
+}
+
+.about__left, .about__right {
+	display: inline-flex;
+	width: 50%;
+	flex-direction: column;
+}
+
+.about__left {
+	background-color: #ebefe2;
+}
+
+.about__right {
+	background-color: #f4f5f0;
+}
+
+.about__triangle {
+	height: 150px;
+}
+
+.about__left-title {
+	margin-bottom: 30px;
+}
+
+.about__left-content {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.about__right-content {
+	width: 90%;
+	margin: 0 auto;
+}

@@ -1,20 +1,3 @@
-.title {
-	font-family: $font-title;
-	color: $title-color;
-}
-
-.title-h1 {
-	@extend .title;
-	font-size: 63px;
-	margin: 70px 0;
-}
-
-.title-h2 {
-	@extend .title;
-	font-size: 35px;
-	margin: 40px 0;
-}
-
 a {
 	color: $link;
 	text-decoration: underline;
@@ -32,4 +15,72 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.title-h1 {
+	font-family: $font-title;
+	color: $title-color;
+	text-transform: uppercase;
+	font-size: 63px;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	&:after {
+		content: '';
+		display: block;
+		width: 90px;
+		height: 3px;
+		margin: 15px auto;
+		background-color: $title-color;
+	}
+}
+
+.title-h1--about:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 150%;
+	left: 0;
+	bottom: 0;
+	opacity: .1;
+	background-image: svg-load('about_header.svg', fill=$pale-green);
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
+}
+
+.title-h2 {
+	font-family: $font-title;
+	color: $text-color;
+	font-size: 35px;
+	position: relative;
+	z-index: 1;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 1.2;
+	&:after {
+		content: '';
+		display: block;
+		width: 90px;
+		height: 3px;
+		margin: 15px auto;
+		background-color: $title-color;
+	}
+}
+
+.title-h1--color--white {
+	color: $white;
+	&:after {
+		background-color: $white;
+	}
+}
+
+.articles__item-title {
+	text-align: left;
+	margin-bottom: 20px;
+	text-transform: initial;
+	&:after {
+		display: none;
+	}
 }

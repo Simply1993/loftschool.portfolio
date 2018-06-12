@@ -1,0 +1,16 @@
+.blog {
+	display: flex;
+	padding-top: 40px;
+	position: relative;
+}
+
+.blog__sidebar {
+	width: 25%;
+	padding-left: 60px;
+}
+
+.blog__content {
+	width: 75%;
+	padding-left: 80px;
+	padding-right: 100px;
+}

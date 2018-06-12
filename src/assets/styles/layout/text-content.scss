@@ -1,0 +1,32 @@
+.text-content {
+	color: $text-color;
+	p {
+		margin-bottom: 15px;
+	}
+	blockquote {
+		margin: 0;
+		padding: 0;
+		opacity: .5;
+		font-weight: 300;
+		font-style: italic;
+	}
+	pre.javascript {
+		background-color: #f5f2f0;
+		ol {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	}
+}
+
+.text-content__author {
+	display: block;
+	font-weight: bold;
+	font-style: italic;
+	&:before {
+		content: '-';
+		display: inline-block;
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+}

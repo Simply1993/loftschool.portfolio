@@ -6,16 +6,14 @@ block content
       header.header
         .header__left
         .header__right
-          .btn.btn--rounded Авторизоваться
-      .center-block
+          a.btn.btn--view--rounded(tabindex=1) Авторизоваться
+      section.center-block
         .welcome
           .welcome__box
-            .user.welcome__user
-              .user__photo(style="background-image: url('./assets/images/photo.jpg');")
-              .user__title Евгений Щербаков
-              .user__description Личный сайт веб-разработчика
-            +social(socials, 'socials', 'welcome__social')
+            +user('./assets/images/photo.jpg', 'Евгений Щербаков', 'Личный сайт веб разработчика', 'welcome__user')
+            +social(socials, 'socials', 'socials--view--transparent socials--color--green welcome__social')
             +menu([['/works.html', 'Мои работы'], ['/about.html', 'Обо мне'], ['/blog.html', 'Блог']], 'menu', 'welcome__menu')
-  footer.footer
-    .copyright.copyright--transparent
-      p.copyright__text!= "&copy Евгений Щербаков | создано с любовью в Loftschool | 2018"
+  footer.footer.footer--bg--transparent
+    .footer__bot
+      .copyright
+        p.copyright__text!= "&copy Евгений Щербаков | создано с любовью в Loftschool | 2018"

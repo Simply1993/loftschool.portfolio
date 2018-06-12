@@ -2,12 +2,16 @@
 	z-index: 1;
 	position: relative;
 	padding: 20px 10px;
+	display: flex;
+	align-items: center;
 }
 
 .header__left {
 	text-align: left;
+	width: 50%;
 }
 
 .header__right {
 	text-align: right;
+	width: 50%;
 }

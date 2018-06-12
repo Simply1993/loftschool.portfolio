@@ -1,0 +1,20 @@
+.section-title {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
+	opacity: .15;
+}
+
+.section-title--bg--portfolio {
+	background-image: svg-load('portfolio_header.svg', fill=white);
+}
+
+.section-title--bg--blog {
+	background-image: svg-load('blog_header.svg', fill=white);
+}

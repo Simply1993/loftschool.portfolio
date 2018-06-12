@@ -1,0 +1,28 @@
+.hero {
+	position: relative;
+	background-image: url('../images/welcome-bg.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	min-height: 600px;
+}
+
+.hero__content {
+	position: relative;
+	padding: 30px;
+}
+
+.hero--blog {
+	min-height: 450px;
+	.hero__description {
+		position: relative;
+	}
+	.hero__title {
+		margin-bottom: 25px;
+	}
+	.hero__subtitle {
+		text-align: center;
+		color: $white;
+	}
+}

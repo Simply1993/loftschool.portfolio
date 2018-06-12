@@ -19,3 +19,17 @@ mixin menu(items, className, mod)
       each item in items
         li(class=`${className}__item`)
           a(class=`${className}__link` href=`${item[0]}`)= item[1]
+
+mixin user(photo, name, text, mod)
+  div.user(class=`${mod}`)
+    .user__photo(style=`background-image: url('${photo}');`)
+    .user__description
+      .user__title= name
+      .user__text= text
+
+mixin triangles(mod)
+  .triangles(class=`${mod}`)
+    svg.triangle.triangles__left(viewBox="0 0 100 100" preserveAspectRatio="none")
+      polygon(points="0 100, 100 100, 0 0")
+    svg.triangle.triangles__right(viewBox="0 0 100 100" preserveAspectRatio="none")
+      polygon(points="0,100 100,0 100,100")

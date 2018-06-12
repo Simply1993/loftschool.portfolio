@@ -20,6 +20,7 @@
 	text-align: center;
 	padding: 15px 0;
 	text-decoration: none;
+	font-weight: 500;
 	transition: .3s;
 	color: $white;
 	background-color: $pale-green;
@@ -30,4 +31,24 @@
 
 .welcome__menu {
 
+}
+
+.footer-info__menu {
+	margin-bottom: 25px;
+}
+
+.menu--view--transparent {
+	.menu__item {
+		border-right: none;
+		margin-right: 20px;
+		flex: initial;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	.menu__link {
+		display: inline-block;
+		padding: 0;
+		background-color: transparent;
+	}
 }
