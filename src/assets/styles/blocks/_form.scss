@@ -1,0 +1,148 @@
+.form {
+
+}
+
+.form__label {
+	opacity: .8;
+}
+
+.form__row {
+	width: 100%;
+}
+
+.form__fields {
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+
+.form__row-title {
+	font-weight: bold;
+	opacity: .8;
+	margin-bottom: 10px;
+}
+
+.form__checkbox-element,
+.form__radio-element {
+	display: inline-flex;
+	align-items: center;
+	margin-right: 40px;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.form__checkbox-input,
+.form__radio-input {
+	position: absolute;
+	top: 0;
+	left: -9999px;
+}
+
+.form__checkbox-fake {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 2px;
+	margin-right: 10px;
+	transition: .3s;
+}
+
+.form__checkbox-check {
+	width: 55%;
+	height: 55%;
+	fill: $white;
+	opacity: 0;
+	transition: opacity .3s;
+}
+
+.form__checkbox-input:checked + .form__checkbox-fake {
+	background-color: $pale-green;
+	.form__checkbox-check {
+		opacity: 1;
+	}
+}
+
+.form__radio-fake {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: $white;
+	transition: border .2s;
+	margin-right: 10px;
+	&:after {
+		content: "";
+		width: 0;
+		height: 0;
+		background-color: $pale-green;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		border-radius: 50%;
+		transition: all .5s;
+	}
+}
+
+.form__radio-input:checked + .form__radio-fake::after {
+	width: 8px;
+	height: 8px;
+}
+
+.form__button {
+	color: $white;
+	font-weight: 500;
+	width: 50%;
+	height: 45px;
+	line-height: 45px;
+	transition: .3s;
+	background-color: $pale-green;
+	border-right: 2px solid rgba($white, .5);
+	&:last-child {
+		border-right: none;
+	}
+	&:hover {
+		background-color: $green;
+	}
+}
+
+.welcome__box-form {
+	width: 100%;
+	.form__label {
+		position: absolute;
+		left: -9999px;
+		top: 0;
+	}
+	.form__input-text {
+		width: 100%;
+		height: 45px;
+		padding-left: 60px;
+		line-height: 45px;
+		border-radius: 22px;
+		background-color: $white;
+		color: $title-color;
+		&::placeholder {
+			color: rgba($title-color, .5);
+		}
+	}
+	.form__field:before {
+		content: '';
+		width: 45px;
+		height: 100%;
+		background-color: #f0efe9;
+	}
+	.form__row {
+		margin-bottom: 20px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

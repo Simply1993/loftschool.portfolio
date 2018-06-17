@@ -8,13 +8,12 @@ block scripts
 
 block content
   section.hero
-    .container
-      include ../common/header
-      .hero__content
-        .section-title.section-title--bg--portfolio
-        +user('./assets/images/photo.jpg', 'Евгений Щербаков', 'Личный сайт веб разработчика', 'hero__user')
-      a.btn-down.hero__btn
-        +icon('arrow_down', 'btn-down__icon')
+    include ../common/header
+    .hero__content
+      .section-title.section-title--bg--portfolio
+      +user('./assets/images/photo.jpg', 'Евгений Щербаков', 'Личный сайт веб разработчика', 'hero__user')
+    a.btn-down.hero__btn
+      +icon('arrow_down', 'btn-down__icon')
 
   main.about
     +triangles('triangles--about')

@@ -8,16 +8,15 @@ block scripts
 
 block content
     section.hero.hero--blog
-        .container
-            include ../common/header
-            .hero__content
-                .user
-                    .user__photo(style="background-image: url('./assets/images/photo.jpg');")
-                .hero__description
-                    .section-title.section-title--bg--blog
-                    .hero__title
-                        h1.title-h1.title-h1--color--white= title
-                    .hero__subtitle Статьи, которые я писал
+        include ../common/header
+        .hero__content
+            .user
+                .user__photo(style="background-image: url('./assets/images/photo.jpg');")
+            .hero__description
+                .section-title.section-title--bg--blog
+                .hero__title
+                    h1.title-h1.title-h1--color--white= title
+                .hero__subtitle Статьи, которые я писал
 
     section.blog
         +triangles('')

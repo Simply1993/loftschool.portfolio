@@ -21,6 +21,8 @@ body {
 .container {
   margin: 0 auto;
   width: 95%;
+  max-width: 1200px;
+  padding: 0 2.5%;
 }
 
 button {
@@ -50,13 +52,4 @@ p {
 
 a {
   cursor: pointer;
-}
-
-.main-section {
-  height: 100%;
-  background-image: url('../images/welcome-bg.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
 }
