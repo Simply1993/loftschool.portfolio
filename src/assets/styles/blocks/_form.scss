@@ -31,6 +31,11 @@
 	margin: 0 auto 15px;
 }
 
+.form__field {
+	height: 100%;
+	position: relative;
+}
+
 .form__row-title {
 	font-weight: bold;
 	opacity: .8;
@@ -141,6 +146,7 @@
 	height: 45px;
 	padding: 0 20px;
 	line-height: 45px;
+	overflow: hidden;
 	border-radius: 22px;
 	background-color: $white;
 	color: $title-color;
@@ -160,6 +166,25 @@
 	}
 }
 
+.form__field--login:before,
+.form__field--password:before {
+	width: 45px;
+	line-height: 45px;
+	height: 45px;
+	background-color: #f0efe9;
+	display: block;
+	position: absolute;
+	border-radius: 22px 0 0 22px;
+}
+
+.form__field--login:before {
+	content: svg-load('login.svg', fill=#c4cbcd);
+}
+
+.form__field--password:before {
+	content: svg-load('password.svg', fill=#c4cbcd);
+}
+
 .welcome__box-form {
 	width: 100%;
 	.form__area {
@@ -168,11 +193,5 @@
 	}
 	.form__input-text {
 		padding-left: 60px;
-	}
-	.form__field:before {
-		content: '';
-		width: 45px;
-		height: 100%;
-		background-color: #f0efe9;
 	}
 }
