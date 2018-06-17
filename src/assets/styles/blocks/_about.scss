@@ -7,6 +7,7 @@
 	display: inline-flex;
 	width: 50%;
 	flex-direction: column;
+	padding-top: 20px;
 }
 
 .about__left {
@@ -23,11 +24,24 @@
 
 .about__left-title {
 	margin-bottom: 30px;
+	@include large-desktop {
+		width: 50%;
+	}
+}
+
+.about__profile {
+	@include large-desktop {
+		width: 50%;
+	}
 }
 
 .about__left-content {
-	width: 60%;
+	width: 75%;
 	margin: 0 auto;
+	@include large-desktop {
+		display: flex;
+		width: 90%;
+	}
 }
 
 .about__right-content {

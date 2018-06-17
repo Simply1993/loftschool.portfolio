@@ -14,7 +14,8 @@ block content
             +user('./assets/images/photo.jpg', 'Евгений Щербаков', 'Личный сайт веб разработчика', 'hero__user')
         button.btn-down.hero__btn
             +icon('arrow_down', 'btn-down__icon')
-    section.works
+    main.works
+        +triangles('t')
         .works__content
             .works-title
                 h1.title-h1.title-h1--works= title
@@ -25,54 +26,57 @@ block content
                             .slider__item-left
                                 .slider__item-description
                                     h2.title-h2.slider__item-title Сайт школы онлайн образования
-                                    .slider__item-techonologies
-                                    a.btn Посмотреть сайт
+                                    .slider__item-techonologies HTML , CSS, JavaScript
+                                    a.btn.btn--view--rounded-green Посмотреть сайт
                             .slider__item-right
                                 .slider__item-right-top
                                     .slider__item-image
-                                        img.slider__item-image-pic
+                                        img.slider__item-image-pic(src="./assets/images/slide1.png")
                                 .slider__item-right-bot
                                     .slider__item-nav
                                         .slider__item-prev
+                                            +icon('portf_arrow_down', 'slider__icon')
                                         .slider__item-next
+                                            +icon('portf_arrow_up', 'slider__icon')
     section.about-me
-        .about-me__content
-            .about-me-title
-                h2.title-h2.title-h2--about-me Что обо мне говорят
-            .reviews
-                ul.reviews__list
-                    li.reviews__item
-                        .reviews__photo
-                            img.reviews__photo-pic
-                        .reviews__description
-                            .reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                            .reviews__author
-                                .reviews__author-name Ковальчук Дмитрий
-                                .reviews__author_post основатель Loftschool
-                    li.reviews__item
-                        .reviews__photo
-                            img.reviews__photo-pic
-                        .reviews__description
-                            .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-                            .reviews__author
-                                .reviews__author-name Сабанцев Владимир
-                                .reviews__author_post преподаватель
-    section.form
-        form.form__area(action='/', method='post')
-            .form__fields
-                .form__title Связаться со мной
+        .container
+            .about-me__content
+                .about-me-title
+                    h1.title-h1.title-h1--about-me Что обо мне <br/> говорят
+                .reviews
+                    ul.reviews__list
+                        li.reviews__item
+                            .reviews__photo(style="background-image: url('./assets/images/avatar-reviews1.jpg');")
+                            .reviews__description
+                                .reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                                .reviews__author
+                                    .reviews__author-name Ковальчук Дмитрий
+                                    .reviews__author_post - основатель Loftschool
+                        li.reviews__item
+                            .reviews__photo(style="background-image: url('./assets/images/avatar-reviews2.jpg');")
+                            .reviews__description
+                                .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                                .reviews__author
+                                    .reviews__author-name Сабанцев Владимир
+                                    .reviews__author_post - преподаватель
+        .form
+            form.form__area(action='/', method='post')
+                .form__fields
+                    h2.title-h2.title-h2--color--white.form__title Связаться со мной
+                    .form__row
+                        .form__field
+                            label.form__label.form__label_input Имя
+                            input.form__input-text(type='text', placeholder='Имя')
+                    .form__row
+                        .form__field
+                            label.form__label.form__label_input Email
+                            input.form__input-text(type='text', placeholder='Email')
+                    .form__row
+                        .form__field
+                            label.form__label.form__label_input Ваше сообщение
+                            textarea.form__input-text.form__input-text--textarea(placeholder='Ваше сообщение' rows='3')
                 .form__row
-                    .form__field
-                        label.form__label.form__label_input Имя
-                        input.form__input-text(type='text', placeholder='Имя')
-                .form__row
-                    .form__field
-                        label.form__label.form__label_input Email
-                        input.form__input-text(type='text', placeholder='Email')
-                .form__row
-                    .form__field
-                        label.form__label.form__label_input Ваше сообщение
-                        textarea.form__input-text.form__input-text_textarea(placeholder='Ваше сообщение')
-                .form__row
-                    button.form__button-submit(type='submit') отправить
-                    button.form__button-clear(type='clear') очистить
+                    button.form__button.form__button-submit(type='submit') отправить
+                    button.form__button.form__button-clear(type='clear') очистить
+        button.btn-up
+            +icon('portf_arrow_up', 'btn-up__icon')

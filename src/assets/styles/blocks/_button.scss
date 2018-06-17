@@ -13,7 +13,7 @@
 	}
 }
 
-.btn--view--rounded {
+.btn--view--rounded-transparent {
 	background-color: transparent;
 	border: 1px solid $white;
 	border-radius: 22px;
@@ -22,8 +22,39 @@
 	}
 }
 
+.btn--view--rounded-green {
+	border: 1px solid $pale-green;
+	border-radius: 22px;
+}
+
 .btn--invisibility {
 	opacity: 0;
 	position: absolute;
 	left: -9999px;
+}
+
+.btn-down, .btn-up {
+	display: inline-block;
+	width: 26px;
+	height: 16px;
+	position: absolute;
+	bottom: 70px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: transparent;
+	padding: 0;
+	z-index: 1;
+	&:hover {
+		.btn-down__icon, .btn-up__icon {
+			opacity: 1;
+		}
+	}
+}
+
+.btn-down__icon, .btn-up__icon {
+	transition: .3s;
+	width: 100%;
+	height: 100%;
+	fill: $white;
+	opacity: .7;
 }

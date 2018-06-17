@@ -2,8 +2,24 @@
 
 }
 
+.form__area {
+	width: 380px;
+	margin: 0 auto;
+	background-color: rgba(#dadbd6, .6);
+	border-radius: 5px;
+	padding-top: 30px;
+	overflow: hidden;
+}
+
 .form__label {
 	opacity: .8;
+}
+
+.form__title {
+	color: $text-color;
+	&:after {
+		background-color: $text-color;
+	}
 }
 
 .form__row {
@@ -12,8 +28,7 @@
 
 .form__fields {
 	width: 90%;
-	margin: 0 auto;
-	margin-bottom: 15px;
+	margin: 0 auto 15px;
 }
 
 .form__row-title {
@@ -114,35 +129,50 @@
 	}
 }
 
+.form__label {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+}
+
+.form__input-text {
+	border: 0;
+	width: 100%;
+	height: 45px;
+	padding: 0 20px;
+	line-height: 45px;
+	border-radius: 22px;
+	background-color: $white;
+	color: $title-color;
+	&::placeholder {
+		color: rgba($title-color, .5);
+	}
+}
+
+.form__input-text--textarea {
+	height: initial;
+}
+
+.form__row {
+	margin-bottom: 20px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
 .welcome__box-form {
 	width: 100%;
-	.form__label {
-		position: absolute;
-		left: -9999px;
-		top: 0;
+	.form__area {
+		padding-top: 0;
+		background-color: transparent;
 	}
 	.form__input-text {
-		width: 100%;
-		height: 45px;
 		padding-left: 60px;
-		line-height: 45px;
-		border-radius: 22px;
-		background-color: $white;
-		color: $title-color;
-		&::placeholder {
-			color: rgba($title-color, .5);
-		}
 	}
 	.form__field:before {
 		content: '';
 		width: 45px;
 		height: 100%;
 		background-color: #f0efe9;
-	}
-	.form__row {
-		margin-bottom: 20px;
-		&:last-child {
-			margin-bottom: 0;
-		}
 	}
 }

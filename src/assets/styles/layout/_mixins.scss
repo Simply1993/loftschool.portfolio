@@ -1,0 +1,52 @@
+@mixin center-abs ($position: both) {
+	position: absolute;
+	@if ($position == vertical) {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	@if ($position == horizontal) {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@if ($position == both) {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@mixin large-desktop {
+	@media screen and (min-width: $large-desktop) {
+		@content
+	}
+}
+
+@mixin desktop {
+	@media screen and (max-width: $desktop) {
+		@content
+	}
+}
+
+@mixin laptop {
+	@media screen and (max-width: $laptop) {
+		@content
+	}
+}
+
+@mixin tablets {
+	@media screen and (max-width: $tablets) {
+		@content
+	}
+}
+
+@mixin phones {
+	@media screen and (max-width: $phones) {
+		@content
+	}
+}
+
+@mixin phones-small {
+	@media screen and (max-width: $phones-small) {
+		@content
+	}
+}

@@ -34,6 +34,7 @@ a {
 	text-align: center;
 	position: relative;
 	z-index: 1;
+	line-height: 66px;
 	&:after {
 		content: '';
 		display: block;
@@ -42,6 +43,36 @@ a {
 		margin: 15px auto;
 		background-color: $title-color;
 	}
+}
+
+.title-h1--works:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 150%;
+	left: 0;
+	bottom: 0;
+	opacity: .1;
+	background-image: svg-load('works_header.svg', fill=$pale-green);
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
+}
+
+.title-h1--about-me:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 150%;
+	left: 0;
+	bottom: 0;
+	opacity: .1;
+	background-image: svg-load('about_header.svg', fill=$pale-green);
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
 }
 
 .title-h1--about:before {

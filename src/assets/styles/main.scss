@@ -1,6 +1,3 @@
 @import 'normalize.css';
-@import './layout/fonts.scss';
-@import './layout/base.scss';
-@import './layout/text-content.scss';
-@import './layout/theme.scss';
+@import './layout/*.scss';
 @import './blocks/*.scss';

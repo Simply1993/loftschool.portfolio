@@ -22,3 +22,11 @@
 .user-profile__title {
 	margin-bottom: 25px;
 }
+
+.about__profile {
+	@include large-desktop {
+		.user-profile__image {
+			width: 100%;
+		}
+	}
+}
