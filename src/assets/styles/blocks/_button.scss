@@ -5,7 +5,7 @@
 	font-weight: 500;
 	color: $white;
 	font-size: 16px;
-	transition: .3s;
+	transition: background-color .3s, opacity .3s;
 	text-decoration: none;
 	&:hover {
 		background-color: $green;
@@ -20,4 +20,10 @@
 	&:hover {
 		border-color: #729e19;
 	}
+}
+
+.btn--invisibility {
+	opacity: 0;
+	position: absolute;
+	left: -9999px;
 }

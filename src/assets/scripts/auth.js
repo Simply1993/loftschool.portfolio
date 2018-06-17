@@ -5,11 +5,13 @@ if (auth_btn != null) {
   auth_btn.addEventListener("click", e => {
     e.preventDefault();
     welcome_box.classList.toggle("welcome__box--active");
+    auth_btn.classList.toggle("btn--invisibility");
   });
 }
 if (back_btn != null) {
   back_btn.addEventListener("click", e => {
     e.preventDefault();
     welcome_box.classList.toggle("welcome__box--active");
+    auth_btn.classList.toggle("btn--invisibility")
   });
 }
