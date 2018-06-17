@@ -12,10 +12,10 @@ block content
     .hero__content
       .section-title.section-title--bg--portfolio
       +user('./assets/images/photo.jpg', 'Евгений Щербаков', 'Личный сайт веб разработчика', 'hero__user')
-    a.btn-down.hero__btn
+    a.btn-down.hero__btn(href="#about")
       +icon('arrow_down', 'btn-down__icon')
 
-  main.about
+  main.about#about
     +triangles('triangles--about')
     .about__left
       .about__left-content

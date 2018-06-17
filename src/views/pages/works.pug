@@ -12,10 +12,10 @@ block content
         .hero__content
             .section-title.section-title--bg--portfolio
             +user('./assets/images/photo.jpg', 'Евгений Щербаков', 'Личный сайт веб разработчика', 'hero__user')
-        button.btn-down.hero__btn
+        a.btn-down.hero__btn(href="#works")
             +icon('arrow_down', 'btn-down__icon')
-    main.works
-        +triangles('t')
+    main.works#works
+        +triangles('')
         .works__content
             .works-title
                 h1.title-h1.title-h1--works= title
@@ -78,5 +78,5 @@ block content
                 .form__row
                     button.form__button.form__button-submit(type='submit') отправить
                     button.form__button.form__button-clear(type='clear') очистить
-        button.btn-up
+        a.btn-up(href="#works")
             +icon('portf_arrow_up', 'btn-up__icon')
