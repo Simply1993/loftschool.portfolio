@@ -28,6 +28,7 @@
 	text-align: center;
 	font-style: italic;
 	color: $text-color;
+	margin: 0;
 }
 
 .reviews__text {
@@ -41,6 +42,6 @@
 	font-style: italic;
 }
 
-.reviews__author_post {
+.reviews__author-post {
 	color: $title-color;
 }

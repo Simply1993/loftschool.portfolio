@@ -8,6 +8,7 @@ block scripts
 
 block content
     section.hero
+        h2.visually-hidden Страница Мои работы
         include ../common/header
         .hero__content
             .section-title.section-title--bg--portfolio
@@ -16,8 +17,9 @@ block content
             +icon('arrow_down', 'btn-down__icon')
     main.works#works
         +triangles('')
+        h2.visually-hidden Слайдер Мои Работы
         .works__content
-            .works-title
+            .works__title
                 h1.title-h1.title-h1--works= title
             .works__slider
                 .slider
@@ -39,26 +41,25 @@ block content
                                         .slider__item-next
                                             +icon('portf_arrow_up', 'slider__icon')
     section.about-me
-        .container
-            .about-me__content
-                .about-me-title
-                    h1.title-h1.title-h1--about-me Что обо мне <br/> говорят
-                .reviews
-                    ul.reviews__list
-                        li.reviews__item
-                            .reviews__photo(style="background-image: url('./assets/images/avatar-reviews1.jpg');")
-                            .reviews__description
-                                .reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                                .reviews__author
-                                    .reviews__author-name Ковальчук Дмитрий
-                                    .reviews__author_post - основатель Loftschool
-                        li.reviews__item
-                            .reviews__photo(style="background-image: url('./assets/images/avatar-reviews2.jpg');")
-                            .reviews__description
-                                .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-                                .reviews__author
-                                    .reviews__author-name Сабанцев Владимир
-                                    .reviews__author_post - преподаватель
+        .about-me__content.container
+            .about-me-title
+                h2.title-h1.title-h1--about-me Что обо мне <br/> говорят
+            .reviews
+                ul.reviews__list
+                    li.reviews__item
+                        .reviews__photo(style="background-image: url('./assets/images/avatar-reviews1.jpg');")
+                        blockquote.reviews__description
+                            .reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                            footer.reviews__author
+                                .reviews__author-name Ковальчук Дмитрий
+                                .reviews__author-post - основатель Loftschool
+                    li.reviews__item
+                        .reviews__photo(style="background-image: url('./assets/images/avatar-reviews2.jpg');")
+                        blockquote.reviews__description
+                            .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                            footer.reviews__author
+                                .reviews__author-name Сабанцев Владимир
+                                .reviews__author-post - преподаватель
         .form
             form.form__area(action='/', method='post')
                 .form__fields

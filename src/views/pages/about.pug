@@ -8,6 +8,7 @@ block scripts
 
 block content
   section.hero
+    h2.visually-hidden Страница "Обо мне"
     include ../common/header
     .hero__content
       .section-title.section-title--bg--portfolio
@@ -17,6 +18,7 @@ block content
 
   main.about#about
     +triangles('triangles--about')
+    h2.visually-hidden Основной контент "Обо мне"
     .about__left
       .about__left-content
         .about__left-title
@@ -33,7 +35,7 @@ block content
     .about__right
       .about__right-content
         .about__right-title
-          .title-h2
+          h2.title-h2
             | Чем я могу быть
             br
             |  вам полезен
@@ -54,6 +56,7 @@ block content
                             circle(cx="50" cy="50" r="40").skill__circle.skill__circle_above
                           .skill__title #{skill[0]}
   section.map
+    h2.title-h2.visually-hidden Карта
     .google-map
     .map__content
       .contacts
