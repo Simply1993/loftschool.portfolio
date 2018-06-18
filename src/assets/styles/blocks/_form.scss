@@ -1,0 +1,197 @@
+.form {
+
+}
+
+.form__area {
+	width: 380px;
+	margin: 0 auto;
+	background-color: rgba(#dadbd6, .6);
+	border-radius: 5px;
+	padding-top: 30px;
+	overflow: hidden;
+}
+
+.form__label {
+	opacity: .8;
+}
+
+.form__title {
+	color: $text-color;
+	&:after {
+		background-color: $text-color;
+	}
+}
+
+.form__row {
+	width: 100%;
+}
+
+.form__fields {
+	width: 90%;
+	margin: 0 auto 15px;
+}
+
+.form__field {
+	height: 100%;
+	position: relative;
+}
+
+.form__row-title {
+	font-weight: bold;
+	opacity: .8;
+	margin-bottom: 10px;
+}
+
+.form__checkbox-element,
+.form__radio-element {
+	display: inline-flex;
+	align-items: center;
+	margin-right: 40px;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.form__checkbox-input,
+.form__radio-input {
+	position: absolute;
+	top: 0;
+	left: -9999px;
+}
+
+.form__checkbox-fake,
+.form__radio-fake {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.form__checkbox-fake:before {
+	content: '';
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 2px;
+	margin-right: 10px;
+	transition: background-color .3s;
+}
+
+.form__checkbox-input:checked + .form__checkbox-fake:before {
+	background-image: svg-load('check.svg', fill=#c4cbcd);
+	background-color: $pale-green;
+	background-repeat: no-repeat;
+	background-size: 70%;
+	background-position: center;
+}
+
+.form__radio-fake:before {
+	content: '';
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: $white;
+	transition: border .2s;
+	margin-right: 10px;
+}
+
+.form__radio-input:checked + .form__radio-fake::before {
+	content: "\2022";
+	color: $pale-green;
+	font-size: 40px;
+	text-align: center;
+}
+
+.form__radio {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form__button {
+	color: $white;
+	font-weight: 500;
+	width: 50%;
+	height: 45px;
+	line-height: 45px;
+	transition: .3s;
+	background-color: $pale-green;
+	border-right: 2px solid rgba($white, .5);
+	&:last-child {
+		border-right: none;
+	}
+	&:hover {
+		background-color: $green;
+	}
+}
+
+.form__label {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+}
+
+.form__input-text {
+	border: 0;
+	width: 100%;
+	height: 45px;
+	padding: 0 20px;
+	line-height: 45px;
+	overflow: hidden;
+	border-radius: 22px;
+	background-color: $white;
+	color: $title-color;
+	&::placeholder {
+		color: rgba($title-color, .5);
+	}
+}
+
+.form__input-text--textarea {
+	height: initial;
+}
+
+.form__row {
+	margin-bottom: 20px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.form__field--login:before,
+.form__field--password:before {
+	width: 45px;
+	line-height: 45px;
+	height: 45px;
+	background-color: #f0efe9;
+	display: block;
+	position: absolute;
+	border-radius: 22px 0 0 22px;
+}
+
+.form__field--login:before {
+	content: svg-load('login.svg', fill=#c4cbcd);
+}
+
+.form__field--password:before {
+	content: svg-load('password.svg', fill=#c4cbcd);
+}
+
+.welcome__box-form {
+	width: 100%;
+	.form__area {
+		padding-top: 0;
+		background-color: transparent;
+	}
+	.form__input-text {
+		padding-left: 60px;
+	}
+}

@@ -30,7 +30,7 @@
 }
 
 .welcome__menu {
-
+	width: 100%;
 }
 
 .footer-info__menu {
@@ -41,7 +41,6 @@
 	.menu__item {
 		border-right: none;
 		margin-right: 20px;
-		flex: initial;
 		&:last-child {
 			margin-right: 0;
 		}
@@ -50,5 +49,10 @@
 		display: inline-block;
 		padding: 0;
 		background-color: transparent;
+		border-bottom: 1px solid transparent;
+		transition: .3s;
+		&:hover {
+			border-bottom: 1px solid $white;
+		}
 	}
 }

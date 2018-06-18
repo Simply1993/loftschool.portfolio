@@ -21,6 +21,8 @@ body {
 .container {
   margin: 0 auto;
   width: 95%;
+  max-width: 1200px;
+  padding: 0 2.5%;
 }
 
 button {
@@ -52,11 +54,11 @@ a {
   cursor: pointer;
 }
 
-.main-section {
-  height: 100%;
-  background-image: url('../images/welcome-bg.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
 }
