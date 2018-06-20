@@ -1,12 +1,12 @@
 footer.footer
     .footer__top
         .footer-info
-            .footer-info__col
+            .footer-info__col.footer-info__description
                 p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
-            .footer-info__col
+            .footer-info__col.footer-info__navigation
                 +menu([['works.html', 'Мои работы'], ['about.html', 'Обо мне'], ['blog.html', 'Блог'], ['./', 'Авторизация']], 'menu', 'menu--view--transparent footer-info__menu')
                 +social(socials, 'socials', 'socials--view--transparent')
-            .footer-info__col.text-content
+            .footer-info__col.footer-info__quote.text-content
                 blockquote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
                     span.text-content__author Martin Golding
     .footer__bot

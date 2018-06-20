@@ -35,5 +35,8 @@
 
 	.triangles__right {
 		fill: #f4f5f0;
+		@include laptop {
+			fill: #ebefe2;
+		}
 	}
 }

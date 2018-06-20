@@ -1,6 +1,9 @@
 .reviews {
 	width: 70%;
 	margin: 0 auto;
+	@include tablets {
+		width: 100%;
+	}
 }
 
 .reviews__list {

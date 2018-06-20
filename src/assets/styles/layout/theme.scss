@@ -43,6 +43,10 @@ a {
 		margin: 15px auto;
 		background-color: $title-color;
 	}
+	@include tablets {
+		font-size: 49px;
+		line-height: 52px;
+	}
 }
 
 .title-h1--works:before {
@@ -106,6 +110,9 @@ a {
 		height: 3px;
 		margin: 15px auto;
 		background-color: $title-color;
+	}
+	@include tablets {
+		font-size: 30px;
 	}
 }
 

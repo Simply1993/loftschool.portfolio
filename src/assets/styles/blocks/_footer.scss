@@ -35,6 +35,9 @@
 	display: flex;
 	width: 100%;
 	background-color: rgba($title-color, .85);
+	@include laptop {
+		flex-wrap: wrap;
+	}
 }
 
 .footer-info__col {
@@ -54,5 +57,25 @@
 		right: 100%;
 		transform: translateY(-50%);
 	}
+	@include laptop {
+		flex: initial;
+	}
+}
 
+.footer-info__description {
+	@include laptop {
+		width: 50%;
+	}
+}
+
+.footer-info__navigation {
+	@include laptop {
+		width: 50%;
+	}
+}
+
+.footer-info__quote {
+	@include laptop {
+		width: 100%;
+	}
 }

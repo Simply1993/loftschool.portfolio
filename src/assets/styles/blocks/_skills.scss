@@ -1,11 +1,17 @@
 .skills {
 	color: $text-color;
+	@include laptop {
+		text-align: center;
+	}
 }
 .skills-row__title {
 	text-align: left;
 	font-size: 28px;
 	font-weight: 500;
 	margin-bottom: 15px;
+	@include laptop {
+		text-align: center;
+	}
 }
 
 .skills-row__item {

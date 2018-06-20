@@ -4,6 +4,7 @@
 
 .menu__list {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .menu__item {
@@ -41,6 +42,7 @@
 	.menu__item {
 		border-right: none;
 		margin-right: 20px;
+		flex: initial;
 		&:last-child {
 			margin-right: 0;
 		}

@@ -6,6 +6,9 @@
 	-webkit-background-size: cover;
 	background-size: cover;
 	min-height: 600px;
+	@include laptop {
+		min-height: 500px;
+	}
 }
 
 .hero__content {
