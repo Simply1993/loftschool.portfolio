@@ -9,10 +9,15 @@
 .reviews__list {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .reviews__item {
 	width: 48%;
+	@include phones {
+		width: 100%;
+		margin-bottom: 30px;
+	}
 }
 
 .reviews__photo {

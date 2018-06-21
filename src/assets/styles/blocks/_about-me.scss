@@ -6,8 +6,14 @@
 	background-size: cover;
 	position: relative;
 	padding-bottom: 155px;
+	@include phones {
+		padding-bottom: 100px;
+	}
 }
 
 .about-me__content {
 	margin-bottom: 60px;
+	@include phones {
+		margin-bottom: 10px;
+	}
 }

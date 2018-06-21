@@ -9,6 +9,9 @@
 	@include laptop {
 		min-height: 500px;
 	}
+	@include phones {
+		min-height: 555px;
+	}
 }
 
 .hero__content {

@@ -49,6 +49,9 @@
 			opacity: 1;
 		}
 	}
+	@include phones {
+		bottom: 40px;
+	}
 }
 
 .btn-down__icon, .btn-up__icon {

@@ -18,6 +18,10 @@
 .user__title {
 	font-size: 35px;
 	font-weight: 500;
+	@include phones {
+		font-size: 21px;
+		margin-bottom: 5px;
+	}
 }
 
 .user__text {

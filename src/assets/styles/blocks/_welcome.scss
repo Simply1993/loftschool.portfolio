@@ -1,6 +1,7 @@
 .welcome {
 	color: $white;
 	text-align: center;
+	width: 100%;
 }
 
 .welcome__box {
@@ -8,6 +9,18 @@
 	height: 395px;
 	position: relative;
 	perspective: 1000px;
+	margin: 0 auto;
+	@include phones {
+		height: 375px;
+		width: 95%;
+		margin: 0 auto;
+	}
+}
+
+.welcome__title {
+	@include phones {
+		font-size: 30px;
+	}
 }
 
 .welcome__box-front,

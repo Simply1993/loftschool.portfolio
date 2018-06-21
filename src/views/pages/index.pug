@@ -2,7 +2,7 @@ extends ../auth.layout.pug
 
 block content
   .main-section
-    header.header
+    header.header.header--welcome
       .header__left
       .header__right
         button.btn.btn--view--rounded-transparent#btn-auth(tabindex=1 type="button") Авторизоваться
@@ -15,7 +15,7 @@ block content
             +social(socials, 'socials', 'socials--view--transparent socials--color--green welcome__social')
             +menu([['works.html', 'Мои работы'], ['about.html', 'Обо мне'], ['blog.html', 'Блог']], 'menu', 'welcome__menu')
           .welcome__box-back
-            h2.title-h2.title-h2--color--white Авторизуйтесь
+            h2.title-h2.title-h2--color--white.welcome__title Авторизуйтесь
             .form.welcome__box-form
               form.form__area(action='/', method='post')
                 .form__fields
@@ -45,6 +45,5 @@ block content
                   button.form__button.form__button--back(type="button") На главную
                   button.form__button.form__button--submit(type="submit") Войти
   footer.footer.footer--bg--transparent
-    .footer__bot
-      .copyright
-        small.copyright__text!= "&copy; Евгений Щербаков | создано с любовью в Loftschool | 2018"
+    .copyright
+      small.copyright__text!= "&copy; Евгений Щербаков | создано с любовью в Loftschool | 2018"

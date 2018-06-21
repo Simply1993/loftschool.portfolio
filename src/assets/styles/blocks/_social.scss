@@ -8,13 +8,17 @@
 
 .socials__item {
 	display: inline-block;
-	margin: 0 26px 0 0;
+	margin: 0 25px 0 0;
 	width: 35px;
 	height: 25px;
 	overflow: hidden;
 	vertical-align: middle;
 	&:last-child {
 		margin-right: 0;
+	}
+	@include phones {
+		width: 21px;
+		height: 17px;
 	}
 }
 

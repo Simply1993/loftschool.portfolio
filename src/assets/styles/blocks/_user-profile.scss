@@ -8,6 +8,17 @@
 	width: 443px;
 	height: 391px;
 	overflow: hidden;
+	@include phones {
+		width: 100%;
+		max-height: 300px;
+	}
+}
+
+.user-profile__text {
+	@include phones {
+		width: 95%;
+		margin: 0 auto;
+	}
 }
 
 .user-profile__avatar {

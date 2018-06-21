@@ -1,9 +1,12 @@
 .form {
-
+	@include phones {
+		width: 95%;
+		margin: 0 auto;
+	}
 }
 
 .form__area {
-	width: 380px;
+	width: 100%;
 	margin: 0 auto;
 	background-color: rgba(#dadbd6, .6);
 	border-radius: 5px;
@@ -20,6 +23,9 @@
 	font-size: 35px;
 	&:after {
 		background-color: $text-color;
+	}
+	@include phones {
+		font-size: 21px;
 	}
 }
 

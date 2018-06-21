@@ -15,3 +15,17 @@
 	text-align: right;
 	width: 50%;
 }
+
+.header--welcome {
+	.header__left {
+		@include phones {
+			display: none;
+		}
+	}
+	.header__right {
+		@include phones {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

@@ -12,6 +12,9 @@
 	@include laptop {
 		text-align: center;
 	}
+	@include phones {
+		font-size: 21px;
+	}
 }
 
 .skills-row__item {
@@ -22,10 +25,19 @@
 	&:last-child {
 		margin-right: 0;
 	}
+	@include phones {
+		margin: 15px;
+		&:last-child {
+			margin-right: 15px;
+		}
+	}
 }
 
 .skills-list__item {
 	margin-bottom: 35px;
+	@include phones {
+		margin-bottom: 20px;
+	}
 }
 
 .skill {
@@ -66,4 +78,10 @@
 	font-size: 13px;
 	font-weight: 500;
 	text-align: center;
+}
+
+.skills-row__list {
+	@include phones {
+		text-align: center;
+	}
 }

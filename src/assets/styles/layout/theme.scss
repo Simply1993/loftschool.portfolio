@@ -47,6 +47,10 @@ a {
 		font-size: 49px;
 		line-height: 52px;
 	}
+	@include phones {
+		font-size: 35px;
+		line-height: 42px;
+	}
 }
 
 .title-h1--works:before {
@@ -114,6 +118,13 @@ a {
 	@include tablets {
 		font-size: 30px;
 	}
+	@include phones {
+		font-size: 21px;
+		line-height: 28px;
+		&:after {
+			width: 55px;
+		}
+	}
 }
 
 .title-h1--color--white {
@@ -127,14 +138,5 @@ a {
 	color: $white;
 	&:after {
 		background-color: $white;
-	}
-}
-
-.articles__item-title {
-	text-align: left;
-	margin-bottom: 20px;
-	text-transform: initial;
-	&:after {
-		display: none;
 	}
 }

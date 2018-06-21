@@ -36,15 +36,26 @@
 
 .footer-info__menu {
 	margin-bottom: 25px;
+	@include phones {
+		margin-bottom: 10px;
+	}
 }
 
 .menu--view--transparent {
+	.menu__list {
+		@include phones {
+			justify-content: space-between;
+		}
+	}
 	.menu__item {
 		border-right: none;
 		margin-right: 20px;
 		flex: initial;
 		&:last-child {
 			margin-right: 0;
+		}
+		@include phones {
+			margin: 0;
 		}
 	}
 	.menu__link {

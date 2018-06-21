@@ -11,6 +11,10 @@
 		padding-bottom: 0;
 		border-bottom: none;
 	}
+	@include phones {
+		padding-bottom: 25px;
+		margin-bottom: 25px;
+	}
 }
 
 .articles__item-date {
@@ -18,4 +22,19 @@
 	opacity: .7;
 	color: $green;
 	margin-bottom: 20px;
+	@include phones {
+		margin-bottom: 10px;
+	}
+}
+
+.articles__item-title {
+	text-align: left;
+	margin-bottom: 20px;
+	text-transform: initial;
+	&:after {
+		display: none;
+	}
+	@include phones {
+		margin-bottom: 10px;
+	}
 }

@@ -51,11 +51,17 @@
 	@include laptop {
 		width: 60%;
 	}
+	@include phones {
+		width: 100%;
+	}
 }
 
 .about__right-content {
 	width: 90%;
 	margin: 0 auto;
+	@include phones {
+		width: 100%;
+	}
 }
 
 .about__right-text {
@@ -63,5 +69,9 @@
 	@include laptop {
 		width: 60%;
 		margin: 0 auto 35px;
+	}
+	@include phones {
+		width: 95%;
+		margin: 0 auto 15px;
 	}
 }

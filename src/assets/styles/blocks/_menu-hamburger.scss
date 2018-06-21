@@ -7,6 +7,10 @@
 	align-items: center;
 	background-color: transparent;
 	padding: 0;
+	@include phones {
+		width: 25px;
+		height: 23px;
+	}
 }
 
 .menu-hamburger__lines {
@@ -15,6 +19,9 @@
 	background-color: #fff;
 	-webkit-border-radius: .25rem;
 	border-radius: .25rem;
+	@include phones {
+		height: 3px;
+	}
 	&:before, &:after {
 		content: '';
 		display: block;
@@ -24,6 +31,9 @@
 		background-color: #fff;
 		-webkit-border-radius: .25rem;
 		border-radius: .25rem;
+		@include phones {
+			height: 3px;
+		}
 	}
 	&:before {
 		top: 0;
@@ -31,4 +41,5 @@
 	&:after {
 		bottom: 0;
 	}
+
 }
