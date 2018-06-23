@@ -8,8 +8,32 @@
 	width: 25%;
 	padding-left: 60px;
 	@include tablets {
-		display: none;
+		display: flex;
+		align-items: center;
+		padding-left: 20px;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 100%;
+		width: 90%;
+		background-color: $pale-green;
+		z-index: 10;
 	}
+	@include phones {
+		&:after {
+			content: '';
+			background-color: $pale-green;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			position: absolute;
+			right: -10px;
+		}
+	}
+}
+
+.blog__sidebar--active {
+	right: 10%;
 }
 
 .blog__content {

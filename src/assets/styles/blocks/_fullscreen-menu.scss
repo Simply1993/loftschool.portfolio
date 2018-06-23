@@ -1,0 +1,69 @@
+.fullscreen-menu {
+	font-family: $font-title;
+	position: fixed;
+	left: -9999px;
+	right: 0;
+	background: rgba($pale-green, .87);
+	align-items: center;
+	justify-content: center;
+	z-index: 5;
+	opacity: 0;
+	transition: opacity .3s;
+	text-align: center;
+}
+
+.fullscreen-menu--active {
+	display: flex;
+	opacity: 1;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	z-index: 50;
+}
+
+.fullscreen-menu__item {
+	font-size: 63px;
+	text-transform: uppercase;
+	position: relative;
+	margin-bottom: 15px;
+	@include laptop {
+		font-size: 49px;
+		margin-bottom: 50px;
+	}
+	@include phones {
+		font-size: 35px;
+		margin-bottom: 15px;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.fullscreen-menu__link {
+	color: $white;
+	text-decoration: none;
+	&:after {
+		content: '';
+		height: 3px;
+		width: 90px;
+		background-color: transparent;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		transition: .3s;
+	}
+	&:hover {
+		&:after {
+			background-color: $white;
+		}
+	}
+}
+
+.fullscreen-menu__item--active {
+	.fullscreen-menu__link:after {
+		background-color: $white;
+	}
+}

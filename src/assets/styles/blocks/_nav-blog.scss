@@ -1,6 +1,7 @@
 .nav-blog {
 	text-align: right;
 	font-weight: bold;
+	z-index: 10;
 }
 
 .nav-blog__list {
@@ -10,6 +11,7 @@
 .nav-blog__item {
 	padding: 15px 20px 15px 0;
 	position: relative;
+	transition: .3s;
 	&:after {
 		transition: .3s;
 		content: '';
@@ -19,10 +21,17 @@
 		height: 100%;
 		background-color: transparent;
 		width: 3px;
+		@include phones {
+			display: none;
+		}
 	}
 	&:hover {
 		.nav-blog__link {
 			color: $green;
+			@include tablets {
+				color: $white;
+				font-weight: bold;
+			}
 		}
 		&:after {
 			background-color: $green;
@@ -34,11 +43,19 @@
 	color: $text-color;
 	text-decoration: none;
 	transition: .3s;
+	@include tablets {
+		color: $white;
+		font-weight: 400;
+	}
 }
 
 .nav-blog__item--active {
 	.nav-blog__link {
 		color: $green;
+		@include tablets {
+			color: $white;
+			font-weight: bold;
+		}
 	}
 	&:after {
 		background-color: $green;

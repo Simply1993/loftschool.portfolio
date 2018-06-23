@@ -44,7 +44,7 @@
 .menu--view--transparent {
 	.menu__list {
 		@include phones {
-			justify-content: space-between;
+			justify-content: space-around;
 		}
 	}
 	.menu__item {

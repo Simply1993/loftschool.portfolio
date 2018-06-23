@@ -8,9 +8,11 @@
 	width: 443px;
 	height: 391px;
 	overflow: hidden;
-	@include phones {
+	@include tablets {
 		width: 100%;
-		max-height: 300px;
+	}
+	@include phones {
+		max-height: 350px;
 	}
 }
 
@@ -39,5 +41,8 @@
 		.user-profile__image {
 			width: 100%;
 		}
+	}
+	@include tablets {
+
 	}
 }
