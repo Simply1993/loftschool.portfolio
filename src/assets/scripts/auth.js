@@ -1,3 +1,5 @@
+import "./modules/flipper";
+
 let auth_btn = document.getElementById("btn-auth");
 let welcome_box = document.querySelector(".welcome__box");
 let back_btn = document.querySelector(".form__button--back");

@@ -7,6 +7,7 @@
 	align-items: center;
 	background-color: transparent;
 	padding: 0;
+	z-index: 55;
 	@include phones {
 		width: 25px;
 		height: 23px;
@@ -19,6 +20,7 @@
 	background-color: #fff;
 	-webkit-border-radius: .25rem;
 	border-radius: .25rem;
+	transition: .4s;
 	@include phones {
 		height: 3px;
 	}
@@ -31,6 +33,7 @@
 		background-color: #fff;
 		-webkit-border-radius: .25rem;
 		border-radius: .25rem;
+		transition: .4s;
 		@include phones {
 			height: 3px;
 		}
@@ -41,5 +44,18 @@
 	&:after {
 		bottom: 0;
 	}
+}
 
+.menu-hamburger--active {
+	.menu-hamburger__lines {
+		height: 0;
+		&:before {
+			top: 15px;
+			transform: rotate(45deg);
+		}
+		&:after {
+			bottom: 15px;
+			transform: rotate(-45deg);
+		}
+	}
 }

@@ -8,7 +8,7 @@
 	width: 443px;
 	height: 391px;
 	overflow: hidden;
-	@include tablets {
+	@include desktop {
 		width: 100%;
 	}
 	@include phones {

@@ -5,45 +5,10 @@ block content
     header.header.header--welcome
       .header__left
       .header__right
-        button.btn.btn--view--rounded-transparent#btn-auth(tabindex=1 type="button") Авторизоваться
+        #btn
     section.center-block
       h1.visually-hidden Главная
-      .welcome
-        .welcome__box
-          .welcome__box-front
-            +user('./assets/images/photo.jpg', 'Евгений Щербаков', 'Личный сайт веб разработчика', 'welcome__user')
-            +social(socials, 'socials', 'socials--view--transparent socials--color--green welcome__social')
-            +menu([['works.html', 'Мои работы'], ['about.html', 'Обо мне'], ['blog.html', 'Блог']], 'menu', 'welcome__menu')
-          .welcome__box-back
-            h2.title-h2.title-h2--color--white.welcome__title Авторизуйтесь
-            .form.welcome__box-form
-              form.form__area(action='/', method='post')
-                .form__fields
-                  .form__row
-                    .form__field.form__field--login
-                      label.form__label.form__label_input Логин
-                      input.form__input-text(type='text', placeholder='Логин')
-                  .form__row
-                    .form__field.form__field--password
-                      label.form__label.form__label_input Пароль
-                      input.form__input-text(type='password', placeholder='Пароль')
-                  .form__row
-                    .form__checkbox
-                      .form__checkbox-element
-                        input(name="call" id="checkbox-no-robot" type="checkbox" class="form__checkbox-input")
-                        label(for="checkbox-no-robot" class="form__checkbox-fake") Я человек
-                  .form__row
-                    .form__row-title Вы точно не робот?
-                    .form__radio
-                      .form__radio-element
-                        input(name="robot" value="yes" id="radio-yes" type="radio" class="form__radio-input")
-                        label(for="radio-yes" class="form__radio-fake") Да
-                      .form__radio-element
-                        input(name="robot" value="no" id="radio-no" type="radio" class="form__radio-input")
-                        label(for="radio-no" class="form__radio-fake") Не уверен
-                .form__row
-                  button.form__button.form__button--back(type="button") На главную
-                  button.form__button.form__button--submit(type="submit") Войти
+      #welcome-flipper
   footer.footer.footer--bg--transparent
     .copyright
       small.copyright__text!= "&copy; Евгений Щербаков | создано с любовью в Loftschool | 2018"

@@ -1,4 +1,7 @@
-import "./modules/example";
+import "./modules/skills";
+import { fullscreenMenu } from "./modules/fullscreen";
+var menu = fullscreenMenu();
+menu.init();
 
 //постараться переписать на vue.js на след.неделе
 let btn_down = document.querySelector(".btn-down");
