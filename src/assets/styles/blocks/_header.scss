@@ -16,6 +16,11 @@
 }
 
 .header--welcome {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
 	.header__left {
 		@include phones {
 			display: none;

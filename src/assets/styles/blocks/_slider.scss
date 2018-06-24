@@ -1,5 +1,6 @@
 .slider {
 	height: 100vh;
+	min-height: 570px;
 	margin-bottom: 60px;
 }
 
@@ -9,32 +10,43 @@
 }
 
 .slider__item {
-	display: flex;
 	height: 100%;
+	display: grid;
+	grid-template:
+			"info picture" 70%
+			"info buttons" 30%
+		/ 1fr 1fr;
+	@include tablets {
+		grid-template:
+			"picture" 500px
+			"info" 260px
+			"buttons" 220px
+			/ 1fr;
+	}
+	@include phones {
+		grid-template:
+			"picture" 250px
+			"info" 220px
+			"buttons" 100px
+			/ 1fr;
+	}
 }
 
-.slider__item-left,
-.slider__item-right {
-	width: 50%;
-}
-
-.slider__item-left {
+.slider__item-info {
+	grid-area: info;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: #ebefe2;
 }
 
-.slider__item-right {
+.slider__item-picture {
+	grid-area: picture;
 	background-color: #e1e4d7;
 }
 
-.slider__item-right-top {
-	height: 70%;
-}
-
-.slider__item-right-bot {
-	height: 30%;
+.slider__item-buttons {
+	grid-area: buttons;
 }
 
 .slider__item-description {
@@ -47,6 +59,9 @@
 	text-transform: uppercase;
 	font-weight: 500;
 	margin-bottom: 50px;
+	@include phones {
+		margin-bottom: 10px;
+	}
 }
 
 .slider__item-image {
