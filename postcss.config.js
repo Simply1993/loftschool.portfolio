@@ -11,6 +11,9 @@ module.exports = {
     require("postcss-advanced-variables")({
       variables: require("./src/assets/styles/variables")
     }),
+    require("postcss-pxtorem")({
+      selectorBlackList: ["html"]
+    }),
     require("postcss-nested"),
     require("postcss-rgb"),
     require("postcss-inline-comment"),

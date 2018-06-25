@@ -5,7 +5,10 @@
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	background-size: cover;
-	min-height: 600px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .hero__content {
@@ -14,7 +17,9 @@
 }
 
 .hero--blog {
-	min-height: 450px;
+	display: block;
+	height: auto;
+	min-height: 440px;
 	.hero__description {
 		position: relative;
 	}

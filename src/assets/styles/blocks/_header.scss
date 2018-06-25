@@ -1,5 +1,4 @@
 .header {
-	z-index: 1;
 	position: relative;
 	padding: 20px 10px;
 	display: flex;
@@ -14,4 +13,23 @@
 .header__right {
 	text-align: right;
 	width: 50%;
+}
+
+.header--welcome {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	.header__left {
+		@include phones {
+			display: none;
+		}
+	}
+	.header__right {
+		@include phones {
+			width: 100%;
+			text-align: center;
+		}
+	}
 }

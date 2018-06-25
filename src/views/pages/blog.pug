@@ -19,20 +19,18 @@ block content
                     h1.title-h1.title-h1--color--white= title
                 .hero__subtitle Статьи, которые я писал
 
-    section.blog
+    .blog
         +triangles('')
-        h2.visually-hidden Основной контент "Блог"
         aside.blog__sidebar
-            .nav-blog
-                ul.nav-blog__list
-                    li.nav-blog__item.nav-blog__item--active
-                        a.nav-blog__link(href="#") Самое важное в SASS
-                    li.nav-blog__item
-                        a.nav-blog__link(href="#") Приёмы в вёрстке, без которых не обходится ни один сайт
-                    li.nav-blog__item
-                        a.nav-blog__link(href="#") Самый необходимый набор Gulp плагинов
-                    li.nav-blog__item
-                        a.nav-blog__link(href="#") Почему я выбрал Jade
+            ul.nav-blog.nav-blog__list
+                li.nav-blog__item.nav-blog__item--active
+                    a.nav-blog__link(href="#") Самое важное в SASS
+                li.nav-blog__item
+                    a.nav-blog__link(href="#") Приёмы в вёрстке, без которых не обходится ни один сайт
+                li.nav-blog__item
+                    a.nav-blog__link(href="#") Самый необходимый набор Gulp плагинов
+                li.nav-blog__item
+                    a.nav-blog__link(href="#") Почему я выбрал Jade
 
         main.blog__content.articles
             h2.articles__title.visually-hidden Мои статьи

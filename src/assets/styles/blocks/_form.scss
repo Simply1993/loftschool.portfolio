@@ -1,14 +1,19 @@
 .form {
-
+	width: 380px;
+	margin: 0 auto;
+	background-color: hsla(72,6%,85%,.6);
+	border-radius: 5px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding-top: 30px;
+	@include phones {
+		width: 95%;
+	}
 }
 
 .form__area {
-	width: 380px;
+	width: 100%;
 	margin: 0 auto;
-	background-color: rgba(#dadbd6, .6);
-	border-radius: 5px;
-	padding-top: 30px;
-	overflow: hidden;
 }
 
 .form__label {
@@ -17,13 +22,21 @@
 
 .form__title {
 	color: $text-color;
+	font-size: 35px;
 	&:after {
 		background-color: $text-color;
+	}
+	@include phones {
+		font-size: 21px;
 	}
 }
 
 .form__row {
 	width: 100%;
+}
+
+.form__row--controls {
+	display: flex;
 }
 
 .form__fields {
@@ -186,6 +199,8 @@
 }
 
 .welcome__box-form {
+	background-color: transparent;
+	padding-top: 0;
 	width: 100%;
 	.form__area {
 		padding-top: 0;
@@ -194,4 +209,8 @@
 	.form__input-text {
 		padding-left: 60px;
 	}
+}
+
+.about-me__form {
+	margin-bottom: 50px;
 }

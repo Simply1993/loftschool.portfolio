@@ -10,6 +10,9 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @include tablets {
+    font-size: 14px;
+  }
 }
 
 .wrapper {
@@ -60,5 +63,9 @@ a {
   width: 1px;
   height: 1px;
   margin: -1px;
+  overflow: hidden;
+}
+
+.disable-scroll {
   overflow: hidden;
 }

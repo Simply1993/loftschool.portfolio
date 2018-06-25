@@ -1,10 +1,6 @@
 .main-section {
 	height: 100%;
-	background-image: url('../images/welcome-bg.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	background-size: cover;
+	overflow: hidden;
 }
 
 a {
@@ -42,6 +38,14 @@ a {
 		height: 3px;
 		margin: 15px auto;
 		background-color: $title-color;
+	}
+	@include tablets {
+		font-size: 49px;
+		line-height: 52px;
+	}
+	@include phones {
+		font-size: 35px;
+		line-height: 42px;
 	}
 }
 
@@ -107,6 +111,16 @@ a {
 		margin: 15px auto;
 		background-color: $title-color;
 	}
+	@include tablets {
+		font-size: 30px;
+	}
+	@include phones {
+		font-size: 21px;
+		line-height: 28px;
+		&:after {
+			width: 55px;
+		}
+	}
 }
 
 .title-h1--color--white {
@@ -120,14 +134,5 @@ a {
 	color: $white;
 	&:after {
 		background-color: $white;
-	}
-}
-
-.articles__item-title {
-	text-align: left;
-	margin-bottom: 20px;
-	text-transform: initial;
-	&:after {
-		display: none;
 	}
 }

@@ -6,8 +6,26 @@
 	background-size: cover;
 	position: relative;
 	padding-bottom: 155px;
+	@include phones {
+		padding-bottom: 100px;
+	}
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 90px;
+		@include laptop {
+			height: 190px;
+		}
+		@include phones {
+			height: 270px;
+		}
+	}
 }
 
 .about-me__content {
 	margin-bottom: 60px;
+	@include phones {
+		margin-bottom: 10px;
+	}
 }

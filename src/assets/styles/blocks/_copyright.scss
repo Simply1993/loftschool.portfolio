@@ -3,8 +3,15 @@
 	color: $white;
 	font-size: 16px;
 	background-color: transparent;
+	@include phones {
+		font-weight: 300;
+		font-size: 14px;
+	}
 }
 
 .copyright__text {
 	font-size: 16px;
+	@include phones {
+		font-size: 14px;
+	}
 }

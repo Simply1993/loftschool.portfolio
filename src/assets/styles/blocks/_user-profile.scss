@@ -8,6 +8,19 @@
 	width: 443px;
 	height: 391px;
 	overflow: hidden;
+	@include desktop {
+		width: 100%;
+	}
+	@include phones {
+		max-height: 350px;
+	}
+}
+
+.user-profile__text {
+	@include phones {
+		width: 95%;
+		margin: 0 auto;
+	}
 }
 
 .user-profile__avatar {
@@ -28,5 +41,8 @@
 		.user-profile__image {
 			width: 100%;
 		}
+	}
+	@include tablets {
+
 	}
 }

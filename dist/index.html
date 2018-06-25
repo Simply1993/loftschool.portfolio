@@ -1,1 +1,260 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Portfolio | Welcome page</title><link rel="stylesheet" href="./assets/css/main.min.css"></head><body><div class="main-section"><header class="header"><div class="header__left"></div><div class="header__right"><button class="btn btn--view--rounded-transparent" id="btn-auth" tabindex="1" type="button">Авторизоваться</button></div></header><section class="center-block"><h1 class="visually-hidden">Главная</h1><div class="welcome"><div class="welcome__box"><div class="welcome__box-front"><div class="user welcome__user"><div class="user__photo" style="background-image: url('./assets/images/photo.jpg');"></div><div class="user__description"><div class="user__title">Евгений Щербаков</div><div class="user__text">Личный сайт веб разработчика</div></div></div><div class="socials socials--view--transparent socials--color--green welcome__social"><ul class="socials__list"><li class="socials__item"><a class="socials__link" href="//vk.com" target="_blank"><svg class="socials__icon"><use xlink:href="./assets/images/icons/sprite.svg#vk"></use></svg></a></li><li class="socials__item"><a class="socials__link" href="//github.com" target="_blank"><svg class="socials__icon"><use xlink:href="./assets/images/icons/sprite.svg#github"></use></svg></a></li><li class="socials__item"><a class="socials__link" href="//linkedin.com" target="_blank"><svg class="socials__icon"><use xlink:href="./assets/images/icons/sprite.svg#in"></use></svg></a></li></ul></div><nav class="menu welcome__menu"><ul class="menu__list"><li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li><li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li><li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li></ul></nav></div><div class="welcome__box-back"><h2 class="title-h2 title-h2--color--white">Авторизуйтесь</h2><div class="form welcome__box-form"><form class="form__area" action="/" method="post"><div class="form__fields"><div class="form__row"><div class="form__field form__field--login"><label class="form__label form__label_input">Логин</label><input class="form__input-text" type="text" placeholder="Логин"></div></div><div class="form__row"><div class="form__field form__field--password"><label class="form__label form__label_input">Пароль</label><input class="form__input-text" type="password" placeholder="Пароль"></div></div><div class="form__row"><div class="form__checkbox"><div class="form__checkbox-element"><input class="form__checkbox-input" name="call" id="checkbox-no-robot" type="checkbox"><label class="form__checkbox-fake" for="checkbox-no-robot">Я человек</label></div></div></div><div class="form__row"><div class="form__row-title">Вы точно не робот?</div><div class="form__radio"><div class="form__radio-element"><input class="form__radio-input" name="robot" value="yes" id="radio-yes" type="radio"><label class="form__radio-fake" for="radio-yes">Да</label></div><div class="form__radio-element"><input class="form__radio-input" name="robot" value="no" id="radio-no" type="radio"><label class="form__radio-fake" for="radio-no">Не уверен</label></div></div></div></div><div class="form__row"><button class="form__button form__button--back" type="button">На главную</button><button class="form__button form__button--submit" type="submit">Войти</button></div></form></div></div></div></div></section></div><footer class="footer footer--bg--transparent"><div class="footer__bot"><div class="copyright"><small class="copyright__text">&copy; Евгений Щербаков | создано с любовью в Loftschool | 2018</small></div></div></footer><script src="./assets/js/bootloader.bundle.js"></script><script src="./assets/js/auth.bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio | Welcome page</title>
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js"></script>
+    <script src="https://threejs.org/build/three.min.js"></script>
+  </head>
+  <body>
+    <div class="main-section" id="main-section">
+      <header class="header header--welcome">
+        <div class="header__left"></div>
+        <div class="header__right">
+          <div id="btn"></div>
+        </div>
+      </header>
+      <section class="center-block">
+        <h1 class="visually-hidden">Главная</h1>
+        <div id="welcome-flipper"></div>
+      </section>
+      <footer class="footer footer--bg--transparent">
+        <div class="copyright"><small class="copyright__text">&copy; Евгений Щербаков | создано с любовью в Loftschool | 2018</small></div>
+      </footer>
+    </div>
+    <script type="text/x-template" id="btn-show">
+      <button class="btn btn--view--rounded-transparent" id="btn-auth" @click="flip" tabindex="1" type="button">Авторизоваться</button>
+    </script>
+    <script type="text/x-template" id="welcome">
+      <div class="welcome">
+        <div class="welcome__box">
+          <!--transition(name="flip")-->
+          <welcome-front></welcome-front>
+          <welcome-back></welcome-back>
+        </div>
+      </div>
+    </script>
+    <script type="text/x-template" id="box-front">
+      <div class="welcome__box-front">
+        <div class="user welcome__user">
+          <div class="user__photo" style="background-image: url('./assets/images/photo.jpg');"></div>
+          <div class="user__description">
+            <div class="user__title">Евгений Щербаков</div>
+            <div class="user__text">Личный сайт веб разработчика</div>
+          </div>
+        </div>
+        <div class="socials socials--view--transparent socials--color--green welcome__social">
+          <ul class="socials__list">
+            <li class="socials__item"><a class="socials__link" href="//vk.com" target="_blank">
+                <svg class="socials__icon">
+                  <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="//github.com" target="_blank">
+                <svg class="socials__icon">
+                  <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="//linkedin.com" target="_blank">
+                <svg class="socials__icon">
+                  <use xlink:href="./assets/images/icons/sprite.svg#in"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+        <nav class="menu welcome__menu">
+          <ul class="menu__list">
+            <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
+            <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
+            <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
+          </ul>
+        </nav>
+      </div>
+    </script>
+    <script type="text/x-template" id="box-back">
+      <div class="welcome__box-back">
+        <h2 class="title-h2 title-h2--color--white welcome__title">Авторизуйтесь</h2>
+        <div class="form welcome__box-form">
+          <form class="form__area" action="/" method="post">
+            <div class="form__fields">
+              <div class="form__row">
+                <div class="form__field form__field--login">
+                  <label class="form__label form__label_input">Логин</label>
+                  <input class="form__input-text" type="text" placeholder="Логин">
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field form__field--password">
+                  <label class="form__label form__label_input">Пароль</label>
+                  <input class="form__input-text" type="password" placeholder="Пароль">
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__checkbox">
+                  <div class="form__checkbox-element">
+                    <input class="form__checkbox-input" name="call" id="checkbox-no-robot" type="checkbox">
+                    <label class="form__checkbox-fake" for="checkbox-no-robot">Я человек</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__row-title">Вы точно не робот?</div>
+                <div class="form__radio">
+                  <div class="form__radio-element">
+                    <input class="form__radio-input" name="robot" value="yes" id="radio-yes" type="radio">
+                    <label class="form__radio-fake" for="radio-yes">Да</label>
+                  </div>
+                  <div class="form__radio-element">
+                    <input class="form__radio-input" name="robot" value="no" id="radio-no" type="radio">
+                    <label class="form__radio-fake" for="radio-no">Не уверен</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row form__row--controls">
+              <button class="form__button form__button--back" type="button">На главную</button>
+              <button class="form__button form__button--submit" type="submit">Войти</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </script>
+    <script src="./assets/js/bootloader.bundle.js"></script>
+    <script src="./assets/js/vendor.bundle.js"></script>
+    <script src="./assets/js/auth.bundle.js"></script>
+    <script id="vertexShader" type="x-shader/x-vertex">
+      varying vec2 v_position;
+      uniform vec2 u_size;
+      uniform vec2 u_resolution;
+      
+      void main() {
+        v_position = (position.xy+1.0)*0.5;
+        gl_Position =  vec4(position, 1.0);
+      }
+      
+    </script>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+      uniform float u_time;
+      varying vec2 v_position;
+      uniform sampler2D u_image;
+      uniform sampler2D u_maps;
+      uniform vec2 u_mouse;
+      uniform float u_dpi;
+      uniform vec2 u_resolution;
+      vec2 pos(){
+      return vec2(0.0,0.0);
+      }
+      vec4 blend(vec4 bg,vec4 fg){
+      vec3 bgm=bg.rgb*bg.a;
+      vec3 fgm=fg.rgb*fg.a;
+      float ia=1.0-fg.a;
+      float a=(fg.a + bg.a * ia);
+      vec3 rgb;
+      if(a!=0.0){
+      rgb=(fgm + bgm * ia) / a;
+      }else{
+      rgb=vec3(0.0,0.0,0.0);
+      }
+      return vec4(rgb,a);
+      }
+      vec2 pixel(){
+      return vec2(1.0*1.0)/u_resolution;
+      }
+      float wave(float x,float freq, float speed){
+      return sin(x*freq+((u_time*(3.1415/2.0))*speed));
+      }
+      vec2 waves(vec2 pos){
+      vec4 maps=texture2D(u_maps,pos);
+      float mask=maps.r;
+      float y=maps.g;
+      float y2=pow(y,2.0);
+      vec2 intensity=vec2(
+      0.5-(y2*0.5),
+      0.2+(y2*1.8)
+      )*pixel();
+      vec2 waves=vec2(
+      wave(y,400.0-(y2*200.0),-0.03),
+      wave(y,400.0-(y2*400.0*0.05),-0.045)
+      +wave(y,900.0-(y2*900.0*0.05),-0.05)
+      +wave(pos.x,20.0+(y2*20.0*1.5),-0.01)
+      );
+      return pos+(waves*intensity*mask);
+      }
+      vec2 depth(vec2 pos){
+      vec2 intensity=vec2(0.01,0.01);
+      float d=0.05-pow(texture2D(u_maps,pos).b,1.0);
+      return pos+(intensity*u_mouse*d);
+      }
+      void main(){
+      vec2 pos=v_position.xy;
+      vec2 turbulence=depth(waves(pos));
+      vec2 noTurbulence=depth(pos);
+      vec4 c=texture2D(u_image,turbulence);
+      gl_FragColor=vec4(c.rgb,1.0);
+      }
+      
+    </script>
+    <script>
+      var container;
+      var camera, scene, renderer;
+      var uniforms;
+      var mouse = {x:0, y:0};
+      var loader = new THREE.TextureLoader();
+      init();
+      animate();
+      function init() {
+      container = document.getElementById( 'main-section' );
+      camera = new THREE.Camera();
+      //camera = new THREE.PerspectiveCamera(145, window.innerWidth / window.innerHeight, 1, 5000 );
+      camera.position.z = 1;
+      scene = new THREE.Scene();
+      var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
+      var MyTexture = loader.load( "./assets/images/water.jpg" );
+      var mapTexture = loader.load( "./assets/images/water-maps.jpg" );
+      MyTexture.minFilter = THREE.LinearFilter;
+      uniforms = {
+      u_time: { type: "f", value: 1.0 },
+      u_animation: { type: "f", value: 0.0 },
+      u_mouse: { type: "v2", value: new THREE.Vector2() },
+      u_resolution: { type: "v2", value: new THREE.Vector2() },
+      u_size: {type:"v2", value: new THREE.Vector2(MyTexture.width,MyTexture.height) },
+      u_image: {value:MyTexture },
+      u_maps: {value:mapTexture}
+      };
+      var material = new THREE.ShaderMaterial( {
+      uniforms: uniforms,
+      vertexShader: document.getElementById( 'vertexShader' ).textContent,
+      fragmentShader: document.getElementById( 'fragmentShader' ).textContent
+      } );
+      var mesh = new THREE.Mesh( geometry, material );
+      scene.add( mesh );
+      renderer = new THREE.WebGLRenderer();
+      renderer.setPixelRatio( window.devicePixelRatio );
+      container.appendChild( renderer.domElement );
+      onWindowResize();
+      window.addEventListener( 'resize', onWindowResize, false );
+      }
+      function onWindowResize( event ) {
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      uniforms.u_resolution.value.x = renderer.domElement.width;
+      uniforms.u_resolution.value.y = renderer.domElement.height;
+      uniforms.u_mouse.value.x = mouse.x;
+      uniforms.u_mouse.value.y = mouse.y;
+      }
+      function animate() {
+      requestAnimationFrame( animate );
+      render();
+      }
+      function render() {
+      uniforms.u_time.value += 1.0;
+      renderer.render( scene, camera );
+      }
+      document.addEventListener('mousemove',function(event){
+      TweenLite.to(uniforms.u_mouse.value, 1, {
+      x: ((event.pageX / window.innerWidth) - 0.5) * 1,
+      y: ((event.pageY / window.innerHeight)- 0.5) * 1
+      })
+      })
+    </script>
+  </body>
+</html>

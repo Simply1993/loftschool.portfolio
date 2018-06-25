@@ -52,7 +52,7 @@ gulp.task("pug", () => {
   return gulp
     .src(`${config.VIEWS_DIR}/pages/*.pug`)
     .pipe($gp.plumber())
-    .pipe($gp.pug())
+    .pipe($gp.pug({ pretty: true }))
     .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });
