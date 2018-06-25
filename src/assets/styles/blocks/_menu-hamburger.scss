@@ -48,10 +48,13 @@
 
 .menu-hamburger--active {
 	.menu-hamburger__lines {
-		height: 0;
+		background-color: transparent;
 		&:before {
 			top: 15px;
 			transform: rotate(45deg);
+			@include phones {
+				top: 5px;
+			}
 		}
 		&:after {
 			bottom: 15px;

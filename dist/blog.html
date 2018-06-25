@@ -60,14 +60,12 @@
             </svg>
           </div>
           <aside class="blog__sidebar">
-            <div class="nav-blog">
-              <ul class="nav-blog__list">
-                <li class="nav-blog__item nav-blog__item--active"><a class="nav-blog__link" href="#">Самое важное в SASS</a></li>
-                <li class="nav-blog__item"><a class="nav-blog__link" href="#">Приёмы в вёрстке, без которых не обходится ни один сайт</a></li>
-                <li class="nav-blog__item"><a class="nav-blog__link" href="#">Самый необходимый набор Gulp плагинов</a></li>
-                <li class="nav-blog__item"><a class="nav-blog__link" href="#">Почему я выбрал Jade</a></li>
-              </ul>
-            </div>
+            <ul class="nav-blog nav-blog__list">
+              <li class="nav-blog__item nav-blog__item--active"><a class="nav-blog__link" href="#">Самое важное в SASS</a></li>
+              <li class="nav-blog__item"><a class="nav-blog__link" href="#">Приёмы в вёрстке, без которых не обходится ни один сайт</a></li>
+              <li class="nav-blog__item"><a class="nav-blog__link" href="#">Самый необходимый набор Gulp плагинов</a></li>
+              <li class="nav-blog__item"><a class="nav-blog__link" href="#">Почему я выбрал Jade</a></li>
+            </ul>
           </aside>
           <main class="blog__content articles">
             <h2 class="articles__title visually-hidden">Мои статьи</h2>
@@ -95,57 +93,57 @@
           </main>
         </div>
       </div>
-    </div>
-    <footer class="footer">
-      <div class="footer__top">
-        <div class="footer-info">
-          <div class="footer-info__col footer-info__description">
-            <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.</p>
-          </div>
-          <div class="footer-info__col footer-info__navigation">
-            <nav class="menu menu--view--transparent footer-info__menu">
-              <ul class="menu__list">
-                <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
-                <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
-                <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
-                <li class="menu__item"><a class="menu__link" href="./">Авторизация</a></li>
-              </ul>
-            </nav>
-            <div class="socials socials--view--transparent">
-              <ul class="socials__list">
-                <li class="socials__item"><a class="socials__link" href="//vk.com" target="_blank">
-                    <svg class="socials__icon">
-                      <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
-                    </svg></a></li>
-                <li class="socials__item"><a class="socials__link" href="//github.com" target="_blank">
-                    <svg class="socials__icon">
-                      <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
-                    </svg></a></li>
-                <li class="socials__item"><a class="socials__link" href="//linkedin.com" target="_blank">
-                    <svg class="socials__icon">
-                      <use xlink:href="./assets/images/icons/sprite.svg#in"></use>
-                    </svg></a></li>
-              </ul>
+      <footer class="footer">
+        <div class="footer__top">
+          <div class="footer-info">
+            <div class="footer-info__col footer-info__description">
+              <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.</p>
+            </div>
+            <div class="footer-info__col footer-info__navigation">
+              <nav class="menu menu--view--transparent footer-info__menu">
+                <ul class="menu__list">
+                  <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
+                  <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
+                  <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
+                  <li class="menu__item"><a class="menu__link" href="./">Авторизация</a></li>
+                </ul>
+              </nav>
+              <div class="socials socials--view--transparent">
+                <ul class="socials__list">
+                  <li class="socials__item"><a class="socials__link" href="//vk.com" target="_blank">
+                      <svg class="socials__icon">
+                        <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
+                      </svg></a></li>
+                  <li class="socials__item"><a class="socials__link" href="//github.com" target="_blank">
+                      <svg class="socials__icon">
+                        <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
+                      </svg></a></li>
+                  <li class="socials__item"><a class="socials__link" href="//linkedin.com" target="_blank">
+                      <svg class="socials__icon">
+                        <use xlink:href="./assets/images/icons/sprite.svg#in"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-info__col footer-info__quote text-content">
+              <blockquote>Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.<span class="text-content__author">Martin Golding</span></blockquote>
             </div>
           </div>
-          <div class="footer-info__col footer-info__quote text-content">
-            <blockquote>Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.<span class="text-content__author">Martin Golding</span></blockquote>
-          </div>
         </div>
+        <div class="footer__bot">
+          <div class="copyright"><small class="copyright__text">&copy; Евгений Щербаков | создано с любовью в Loftschool | 2018</small></div>
+        </div>
+      </footer>
+      <div class="fullscreen-menu">
+        <nav class="fullscreen-menu__nav">
+          <ul class="fullscreen-menu__list">
+            <li class="fullscreen-menu__item"><a class="fullscreen-menu__link" href="works.html">Мои работы</a></li>
+            <li class="fullscreen-menu__item"><a class="fullscreen-menu__link" href="about.html">Обо мне</a></li>
+            <li class="fullscreen-menu__item"><a class="fullscreen-menu__link" href="blog.html">Блог</a></li>
+            <li class="fullscreen-menu__item"><a class="fullscreen-menu__link" href="./">Авторизация</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="footer__bot">
-        <div class="copyright"><small class="copyright__text">&copy; Евгений Щербаков | создано с любовью в Loftschool | 2018</small></div>
-      </div>
-    </footer>
-    <div class="fullscreen-menu">
-      <nav class="fullscreen-menu__nav">
-        <ul class="fullscreen-menu__list">
-          <li class="fullscreen-menu__item"><a class="fullscreen-menu__link" href="works.html">Мои работы</a></li>
-          <li class="fullscreen-menu__item"><a class="fullscreen-menu__link" href="about.html">Обо мне</a></li>
-          <li class="fullscreen-menu__item"><a class="fullscreen-menu__link" href="blog.html">Блог</a></li>
-          <li class="fullscreen-menu__item"><a class="fullscreen-menu__link" href="./">Авторизация</a></li>
-        </ul>
-      </nav>
     </div>
     <script type="text/x-template" id="skills">
       <div class="skills">

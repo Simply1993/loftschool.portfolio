@@ -24,7 +24,7 @@ new Vue({
   el: "#btn",
   methods: {
     flip() {
-      console.log("test");
+      //console.log("test");
     }
   },
   template: "#btn-show"

@@ -1,5 +1,7 @@
 .footer {
-	position: relative;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -26,7 +28,6 @@
 
 .footer--bg--transparent {
 	height: 40px;
-	margin-top: -45px;
 	background-color: transparent;
 	font-weight: 400;
 	.footer__bot {
@@ -37,7 +38,7 @@
 .footer-info {
 	display: flex;
 	width: 100%;
-	background-color: rgba($title-color, .85);
+	background-color: rgba($title-color, .5);
 	@include laptop {
 		flex-wrap: wrap;
 	}

@@ -30,14 +30,14 @@ block content
                                     h2.title-h2.slider__item-title Сайт школы онлайн образования
                                     .slider__item-techonologies HTML , CSS, JavaScript
                                     a.btn.btn--view--rounded-green Посмотреть сайт
-                            .slider__item-picture
-                                .slider__item-image
-                                    img.slider__item-image-pic(src="./assets/images/slide1.png" alt="Первый слайд")
+                            .slider__item-display
+                                .slider__item-image-wrap
+                                    img.slider__item-picture(src="./assets/images/slide1.png" alt="Первый слайд")
                             .slider__item-buttons
                                 .slider__item-nav
-                                    .slider__item-prev
+                                    button.slider__item-prev
                                         +icon('portf_arrow_down', 'slider__icon')
-                                    .slider__item-next
+                                    button.slider__item-next
                                         +icon('portf_arrow_up', 'slider__icon')
     section.about-me
         .about-me__content.container
@@ -59,10 +59,10 @@ block content
                             footer.reviews__author
                                 .reviews__author-name Сабанцев Владимир
                                 .reviews__author-post - преподаватель
-        .form
+        .form.about-me__form
+            h2.title-h2.title-h2--color--white.form__title Связаться со мной
             form.form__area(action='/', method='post')
                 .form__fields
-                    h2.title-h2.title-h2--color--white.form__title Связаться со мной
                     .form__row
                         .form__field
                             label.form__label.form__label_input Имя

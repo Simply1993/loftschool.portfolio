@@ -34,13 +34,11 @@
 }
 
 .btn-down, .btn-up {
-	display: inline-block;
+	display: block;
+	margin: 0 auto;
 	width: 26px;
 	height: 16px;
-	position: absolute;
-	bottom: 70px;
-	left: 50%;
-	transform: translateX(-50%);
+	position: relative;
 	background-color: transparent;
 	padding: 0;
 	z-index: 1;
@@ -49,6 +47,10 @@
 			opacity: 1;
 		}
 	}
+}
+
+.btn-down {
+	bottom: 70px;
 	@include phones {
 		bottom: 40px;
 	}

@@ -1,5 +1,8 @@
 .slider {
 	height: 100vh;
+	@include tablets {
+		height: auto;
+	}
 	min-height: 570px;
 	margin-bottom: 60px;
 }
@@ -40,7 +43,7 @@
 	background-color: #ebefe2;
 }
 
-.slider__item-picture {
+.slider__item-display {
 	grid-area: picture;
 	background-color: #e1e4d7;
 }
@@ -64,14 +67,14 @@
 	}
 }
 
-.slider__item-image {
+.slider__item-image-wrap {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 }
 
-.slider__item-image-pic {
+.slider__item-picture {
 	display: block;
 	max-width: 70%;
 	max-height: 70%;
