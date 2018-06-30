@@ -7,6 +7,7 @@
 .blog__sidebar {
 	width: 25%;
 	padding-left: 60px;
+	transition: .3s;
 	@include tablets {
 		display: flex;
 		align-items: center;
@@ -15,23 +16,34 @@
 		top: 0;
 		bottom: 0;
 		right: 100%;
-		width: 90%;
+		width: 50%;
 		background-color: $pale-green;
 		z-index: 10;
-		&:after {
-			content: '';
-			background-color: $pale-green;
-			width: 60px;
-			height: 60px;
-			border-radius: 50%;
-			position: absolute;
-			right: -10px;
-		}
+	}
+	@include phones {
+		width: 90%;
+	}
+}
+
+.blog__btn {
+	display: none;
+	@include tablets {
+		display: block;
+		cursor: pointer;
+		background-color: $pale-green;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		position: absolute;
+		right: -10px;
 	}
 }
 
 .blog__sidebar--active {
-	right: 10%;
+	right: 50%;
+	@include phones {
+		right: 10%;
+	}
 }
 
 .blog__content {

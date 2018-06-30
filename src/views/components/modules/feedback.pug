@@ -1,0 +1,20 @@
+script(type="text/x-template")#feedback
+    .form.about-me__form
+        h2.title-h2.title-h2--color--white.form__title Связаться со мной
+        form.form__area(action='http://loftschool.ozpkmsimply.tmweb.ru/feedback.php', method='post' @submit="sendForm" novalidate="true")
+            .form__fields
+                .form__row
+                    .form__field
+                        label.form__label.form__label_input(for='name') Имя
+                        input.form__input-text(type='text' placeholder='Имя' name='name' v-model="name")
+                .form__row
+                    .form__field
+                        label.form__label.form__label_input(for='email') Email
+                        input.form__input-text(type='email' placeholder='Email' name='email' v-model='email')
+                .form__row
+                    .form__field
+                        label.form__label.form__label_input(for='msg') Ваше сообщение
+                        textarea.form__input-text.form__input-text--textarea(placeholder='Ваше сообщение' rows='3' name='msg' v-model='msg')
+            .form__row.form__row--controls
+                button.form__button.form__button-submit(type='submit') Отправить
+                button.form__button.form__button-clear(type='reset') Очистить

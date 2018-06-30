@@ -59,24 +59,6 @@ block content
                             footer.reviews__author
                                 .reviews__author-name Сабанцев Владимир
                                 .reviews__author-post - преподаватель
-        .form.about-me__form
-            h2.title-h2.title-h2--color--white.form__title Связаться со мной
-            form.form__area(action='/', method='post')
-                .form__fields
-                    .form__row
-                        .form__field
-                            label.form__label.form__label_input Имя
-                            input.form__input-text(type='text', placeholder='Имя')
-                    .form__row
-                        .form__field
-                            label.form__label.form__label_input Email
-                            input.form__input-text(type='text', placeholder='Email')
-                    .form__row
-                        .form__field
-                            label.form__label.form__label_input Ваше сообщение
-                            textarea.form__input-text.form__input-text--textarea(placeholder='Ваше сообщение' rows='3')
-                .form__row.form__row--controls
-                    button.form__button.form__button-submit(type='submit') Отправить
-                    button.form__button.form__button-clear(type='reset') Очистить
+        #feedback-wrapper
         a.btn-up(href="#works")
             +icon('portf_arrow_up', 'btn-up__icon')

@@ -2,6 +2,9 @@
 	text-align: right;
 	font-weight: bold;
 	z-index: 10;
+	@include tablets {
+		margin-left: auto;
+	}
 }
 
 .nav-blog__list {
@@ -21,7 +24,7 @@
 		height: 100%;
 		background-color: transparent;
 		width: 3px;
-		@include phones {
+		@include tablets {
 			display: none;
 		}
 	}
@@ -42,7 +45,7 @@
 .nav-blog__link {
 	color: $text-color;
 	text-decoration: none;
-	transition: .3s;
+	transition: color .3s;
 	@include tablets {
 		color: $white;
 		font-weight: 400;
