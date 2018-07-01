@@ -1,4 +1,5 @@
 import "./modules/flipper";
+import "./modules/preloader";
 
 let auth_btn = document.getElementById("btn-auth");
 let welcome_box = document.querySelector(".welcome__box");

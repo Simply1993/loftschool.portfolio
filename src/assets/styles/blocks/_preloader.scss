@@ -1,0 +1,25 @@
+.preloader {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $pale-green;
+	background-image: url('../images/forest_prel_bg.jpg');
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+	z-index: 50;
+	transition: opacity .5s;
+	&--hide {
+		opacity: 0;
+		z-index: 0;
+	}
+}
+
+.preloader__svg {
+	fill: $white;
+	stroke: $white;
+}

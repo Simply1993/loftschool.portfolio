@@ -1,4 +1,6 @@
 import "./modules/feedback";
+import "./modules/preloader";
+import "./modules/slider";
 import { fullscreenMenu } from "./modules/fullscreen";
 var menu = fullscreenMenu();
 menu.init();

@@ -21,24 +21,8 @@ block content
         .works__content
             .works__title
                 h1.title-h1.title-h1--works= title
-            .works__slider
-                .slider
-                    ul.slider__list
-                        li.slider__item
-                            .slider__item-info
-                                .slider__item-description
-                                    h2.title-h2.slider__item-title Сайт школы онлайн образования
-                                    .slider__item-techonologies HTML , CSS, JavaScript
-                                    a.btn.btn--view--rounded-green Посмотреть сайт
-                            .slider__item-display
-                                .slider__item-image-wrap
-                                    img.slider__item-picture(src="./assets/images/slide1.png" alt="Первый слайд")
-                            .slider__item-buttons
-                                .slider__item-nav
-                                    button.slider__item-prev
-                                        +icon('portf_arrow_down', 'slider__icon')
-                                    button.slider__item-next
-                                        +icon('portf_arrow_up', 'slider__icon')
+            .slider-container
+                #slider-component
     section.about-me
         .about-me__content.container
             .about-me-title

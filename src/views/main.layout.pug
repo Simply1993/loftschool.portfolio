@@ -11,13 +11,16 @@ html(lang="ru")
 
     title Portfolio | #{title}
     link(rel='stylesheet' href='./assets/css/main.min.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js')
   body
+    #animated-number
     .wrapper
       .maincontent
         block content
 
       include ./common/footer
     include ./components/templates
+    include ./components/modules/preloader
 
     script(src='./assets/js/bootloader.bundle.js')
     script(src='./assets/js/vendor.bundle.js')

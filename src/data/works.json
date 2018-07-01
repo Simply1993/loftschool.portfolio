@@ -1,0 +1,30 @@
+[
+  {
+	"id": 1,
+	"title" : "Сайт Workadium",
+	"skills" : "HMTL5, CSS3",
+	"photo" : "/assets/images/slider/coworking.png",
+	"link" : "http://loftschool.ozpkmsimply.tmweb.ru/"
+  },
+  {
+	"id": 2,
+	"title" : "Сайт Mr.Burger",
+	"skills" : "HTML5, CSS3, JavaScript",
+	"photo" : "/assets/images/slider/burger-shop.png",
+	"link" : "https://simply1993.github.io/loftschool.burger/app/"
+  },
+  {
+	"id": 3,
+	"title" : "Сайт-портфолио",
+	"skills" : "HMTL5, CSS3, JavaScript, Vue.js, WebGL(Three.js)",
+	"photo" : "/assets/images/slider/portfolio.png",
+	"link" : "https://simply1993.github.io/loftschool.portfolio/dist/"
+  },
+  {
+	"id": 4,
+	"title" : "Сайт школы онлайн образования",
+	"skills" : "HTML5, CSS3, JavaScript",
+	"photo" : "/assets/images/slider/temp-work.png",
+	"link" : "//google.com"
+  }
+]

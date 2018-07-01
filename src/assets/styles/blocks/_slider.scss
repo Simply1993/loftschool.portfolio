@@ -1,60 +1,112 @@
 .slider {
 	height: 100vh;
-	@include tablets {
-		height: auto;
-	}
 	min-height: 570px;
 	margin-bottom: 60px;
-}
-
-.slider__list {
-	position: relative;
-	height: 100%;
-}
-
-.slider__item {
-	height: 100%;
+	background: #f0efe9;
 	display: grid;
 	grid-template:
-			"info picture" 70%
+			"info display" 70%
 			"info buttons" 30%
-		/ 1fr 1fr;
+    / 1fr 1fr;
+
 	@include tablets {
+		height: auto;
 		grid-template:
-			"picture" 500px
-			"info" 260px
-			"buttons" 220px
-			/ 1fr;
-	}
-	@include phones {
-		grid-template:
-			"picture" 250px
-			"info" 220px
-			"buttons" 100px
-			/ 1fr;
+				"display" 400px
+				"info" 300px
+				"buttons" 200px
+      / 1fr;
 	}
 }
 
-.slider__item-info {
-	grid-area: info;
+
+.slider__display {
+	grid-area: display;
+	background: #efebe0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #ebefe2;
 }
 
-.slider__item-display {
-	grid-area: picture;
-	background-color: #e1e4d7;
+.slider__big-pic {
+	display: block;
+	max-width: 90%;
+	max-height: 90%;
 }
 
-.slider__item-buttons {
+.slider__buttons {
 	grid-area: buttons;
+	display: flex;
+	overflow: hidden;
 }
 
-.slider__item-description {
-	width: 80%;
-	text-align: center;
+.slider__button {
+	width: 50%;
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+	transition: .5s;
+
+	&:hover {
+		opacity: .7;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(#000, .3);
+		z-index: 10;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 44px;
+		height: 29px;
+		background: svg-load('arrow_down.svg', fill=#ffffff) center center no-repeat / contain;
+		z-index: 20;
+	}
+	&--prev {
+		&:after {
+
+		}
+	}
+	&--next {
+		&:after {
+			transform: translate(-50%, -50%) rotate(-180deg);
+		}
+	}
+}
+
+.slider__button-img-wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.slider__button-pic {
+	display: block;
+	max-width: 90%;
+	max-height: 90%;
+}
+
+.slider__button-img-container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .slider__item-techonologies {
@@ -67,70 +119,57 @@
 	}
 }
 
-.slider__item-image-wrap {
+
+.slider__item-info {
+	grid-area: info;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+	background-color: #ebefe2;
 }
 
-.slider__item-picture {
-	display: block;
-	max-width: 70%;
-	max-height: 70%;
+.slider__item-description {
+	width: 80%;
+	text-align: center;
 }
 
-.slider__item-nav {
-	height: 100%;
-	display: flex;
+.slide-down-enter-active, .slide-down-leave-active {
+	transition: 1s;
 }
 
-.slider__item-prev,
-.slider__item-next {
-	position: relative;
-	width: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	user-select: none;
+.slide-down-leave {
+	bottom: 0%;
 }
 
-.slider__icon {
-	width: 43px;
-	height: 27px;
-	fill: $white;
-	z-index: 10;
+.slide-down-leave-to {
+	bottom: -100%;
 }
 
-.slider__item-prev {
-	background-image: url('../images/slide-nav-prev.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	&:before {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-color: rgba(#b0b7aa, .7);
-	}
+.slide-down-enter {
+	bottom: 100%;
 }
 
-.slider__item-next {
-	background-image: url('../images/slide-nav-next.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	&:before {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-color: rgba(#93998d, .7);
-	}
+.slide-down-enter-to {
+	bottom: 0%;
+}
+
+
+.slide-up-enter-active, .slide-up-leave-active {
+	transition: 1s;
+}
+
+.slide-up-leave {
+	bottom: 0%;
+}
+
+.slide-up-leave-to {
+	bottom: 100%;
+}
+
+.slide-up-enter {
+	bottom: -100%;
+}
+
+.slide-up-enter-to {
+	bottom: 0%;
 }
