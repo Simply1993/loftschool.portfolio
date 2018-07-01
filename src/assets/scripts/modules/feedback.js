@@ -8,25 +8,31 @@ new Vue({
     name: null,
     email: null,
     msg: null,
-    url: null
+    url: null,
+    success: false
   },
   methods: {
     sendForm: function(e) {
-      e.preventDefault();
       this.url = e.target.action;
       if (this.checkForm()) {
         let fields = {
-          name: "Имя",
-          email: "Почта",
-          msg: "Сообщение"
+          name: this.name,
+          email: this.email,
+          msg: this.msg
         };
         axios
           .post(this.url, fields)
           .then(response => {
+            this.success = true;
+            setTimeout(() => {
+              this.success = false;
+              console.log(e);
+              e.target.reset();
+            }, 2000);
             console.log(response);
           })
-          .catch(e => {
-            console.log(e);
+          .catch(error => {
+            console.log(error);
           });
       } else {
         console.log(this.errors);
@@ -49,6 +55,12 @@ new Vue({
     validEmail: function(email) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
+    },
+    invalidField: function(e) {
+      e.target.classList.add("form__input-text--error");
+    },
+    validField: function(e) {
+      e.target.classList.remove("form__input-text--error");
     }
   },
   template: "#feedback"

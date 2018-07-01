@@ -75,24 +75,24 @@
       <div class="welcome__box-back">
         <h2 class="title-h2 title-h2--color--white welcome__title">Авторизуйтесь</h2>
         <div class="form welcome__box-form">
-          <form class="form__area" action="/" method="post">
+          <form class="form__area" @submit.prevent="sendForm" action="http://loftschool.ozpkmsimply.tmweb.ru/auth.php" method="post">
             <div class="form__fields">
               <div class="form__row">
                 <div class="form__field form__field--login">
-                  <label class="form__label form__label_input">Логин</label>
-                  <input class="form__input-text" type="text" placeholder="Логин">
+                  <label class="form__label form__label_input" for="login">Логин</label>
+                  <input class="form__input-text" @invalid="invalidField" @input="validField" v-model.trim="login" required type="text" placeholder="Логин" name="login">
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__field form__field--password">
-                  <label class="form__label form__label_input">Пароль</label>
-                  <input class="form__input-text" type="password" placeholder="Пароль">
+                  <label class="form__label form__label_input" for="password">Пароль</label>
+                  <input class="form__input-text" @invalid="invalidField" @input="validField" v-model="password" required type="password" placeholder="Пароль" name="password">
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__checkbox">
                   <div class="form__checkbox-element">
-                    <input class="form__checkbox-input" name="call" id="checkbox-no-robot" type="checkbox">
+                    <input class="form__checkbox-input" v-model="noRobot" name="call" id="checkbox-no-robot" type="checkbox">
                     <label class="form__checkbox-fake" for="checkbox-no-robot">Я человек</label>
                   </div>
                 </div>
@@ -101,11 +101,11 @@
                 <div class="form__row-title">Вы точно не робот?</div>
                 <div class="form__radio">
                   <div class="form__radio-element">
-                    <input class="form__radio-input" name="robot" value="yes" id="radio-yes" type="radio">
+                    <input class="form__radio-input" v-model="robot" name="robot" value="yes" id="radio-yes" type="radio">
                     <label class="form__radio-fake" for="radio-yes">Да</label>
                   </div>
                   <div class="form__radio-element">
-                    <input class="form__radio-input" name="robot" value="no" id="radio-no" type="radio">
+                    <input class="form__radio-input" v-model="robot" name="robot" value="no" id="radio-no" type="radio">
                     <label class="form__radio-fake" for="radio-no">Не уверен</label>
                   </div>
                 </div>

@@ -213,24 +213,27 @@
     <script type="text/x-template" id="feedback">
       <div class="form about-me__form">
         <h2 class="title-h2 title-h2--color--white form__title">Связаться со мной</h2>
-        <form class="form__area" action="http://loftschool.ozpkmsimply.tmweb.ru/feedback.php" method="post" @submit="sendForm" novalidate="true">
+        <form class="form__area" @submit.prevent="sendForm" novalidate="true" action="http://loftschool.ozpkmsimply.tmweb.ru/feedback.php" method="post">
+          <ul class="form__errors" v-if="errors.length">
+            <li class="form__errors-item" v-for="error in errors">{{ error }}</li>
+          </ul>
           <div class="form__fields">
             <div class="form__row">
               <div class="form__field">
                 <label class="form__label form__label_input" for="name">Имя</label>
-                <input class="form__input-text" type="text" placeholder="Имя" name="name" v-model="name">
+                <input class="form__input-text" @invalid="invalidField" type="text" placeholder="Имя" name="name" v-model.trim="name">
               </div>
             </div>
             <div class="form__row">
               <div class="form__field">
                 <label class="form__label form__label_input" for="email">Email</label>
-                <input class="form__input-text" type="email" placeholder="Email" name="email" v-model="email">
+                <input class="form__input-text" @invalid="invalidField" type="email" placeholder="Email" name="email" v-model.trim="email">
               </div>
             </div>
             <div class="form__row">
               <div class="form__field">
                 <label class="form__label form__label_input" for="msg">Ваше сообщение</label>
-                <textarea class="form__input-text form__input-text--textarea" placeholder="Ваше сообщение" rows="3" name="msg" v-model="msg"></textarea>
+                <textarea class="form__input-text form__input-text--textarea" @invalid="invalidField" placeholder="Ваше сообщение" rows="3" name="msg" v-model.trim="msg"></textarea>
               </div>
             </div>
           </div>
@@ -239,6 +242,12 @@
             <button class="form__button form__button-clear" type="reset">Очистить</button>
           </div>
         </form>
+        <div class="form__success" :class="{&quot;form__success--active&quot;: success == true}">
+          <div class="form__success-message">Сообщение успешно отправлено</div>
+        </div>
+        <div class="form__unsuccess">
+          <div class="form__unsuccess-message">Произошла ошибка на стороне сервера</div>
+        </div>
       </div>
     </script>
     <script src="./assets/js/bootloader.bundle.js"></script>
