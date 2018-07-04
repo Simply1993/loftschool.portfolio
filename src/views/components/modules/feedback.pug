@@ -2,8 +2,6 @@ script(type="text/x-template")#feedback
     .form.about-me__form
         h2.title-h2.title-h2--color--white.form__title Связаться со мной
         form.form__area(@submit.prevent="sendForm" novalidate="true" action="http://loftschool.ozpkmsimply.tmweb.ru/feedback.php" method="post")
-            ul.form__errors(v-if="errors.length")
-                li.form__errors-item(v-for="error in errors") {{ error }}
             .form__fields
                 .form__row
                     .form__field
@@ -22,5 +20,5 @@ script(type="text/x-template")#feedback
                 button.form__button.form__button-clear(type="reset") Очистить
         .form__success(:class='{"form__success--active": success == true}')
             .form__success-message Сообщение успешно отправлено
-        .form__unsuccess
-            .form__unsuccess-message Произошла ошибка на стороне сервера
+        .form__unsuccess(:class='{"form__unsuccess--active": unsuccess == true}')
+            .form__unsuccess-message(v-for="error in errors") {{ error }}

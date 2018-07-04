@@ -11,7 +11,7 @@ if (btn_down != null) {
     e.preventDefault();
     let id = btn_down.getAttribute("href");
     let top = document.querySelector(id).offsetTop;
-    window.scroll({
+    window.scrollBy({
       top: top,
       behavior: "smooth"
     });

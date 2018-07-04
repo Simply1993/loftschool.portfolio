@@ -28,6 +28,12 @@
 	align-items: center;
 }
 
+.slider__img-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .slider__big-pic {
 	display: block;
 	max-width: 90%;
@@ -114,6 +120,17 @@
 	text-transform: uppercase;
 	font-weight: 500;
 	margin-bottom: 50px;
+	font-size: 0;
+	span {
+		font-size: 14px;
+		display: inline-block;
+
+		&.whitespace {
+			&:after {
+				content: "\00a0";
+			}
+		}
+	}
 	@include phones {
 		margin-bottom: 10px;
 	}
@@ -172,4 +189,69 @@
 
 .slide-up-enter-to {
 	bottom: 0%;
+}
+
+//animation big image
+.fade-out-enter-active, .fade-out-leave-active {
+	transition: .5s;
+}
+
+.fade-out-leave {
+	opacity: 1;
+}
+
+.fade-out-leave-to {
+	opacity: 0;
+}
+
+.fade-out-enter {
+	opacity: 0;
+}
+
+.fade-out-enter-to {
+	opacity: 1;
+}
+
+//bounce animation
+@keyframes bounceIn {
+	from,
+	20%,
+	40%,
+	60%,
+	80%,
+	to {
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+
+	0% {
+		opacity: 0;
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+
+	20% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+
+	40% {
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+
+	60% {
+		opacity: 1;
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+
+	80% {
+		transform: scale3d(0.97, 0.97, 0.97);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+.bounceIn {
+	animation-duration: 2s;
+	animation-name: bounceIn;
 }

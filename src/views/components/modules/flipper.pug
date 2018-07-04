@@ -45,3 +45,7 @@ script(type="text/x-template")#box-back
                 .form__row.form__row--controls
                     button.form__button.form__button--back(type="button") На главную
                     button.form__button.form__button--submit(type="submit") Войти
+            .form__success(:class='{"form__success--active": success == true}')
+                .form__success-message Переход в админку
+            .form__unsuccess(:class='{"form__success--active": unsuccess == true}')
+                .form__unsuccess-message(v-for="error in errors") {{error}}

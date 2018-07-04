@@ -31,7 +31,7 @@ new Vue({
     },
     loading() {
       document.body.classList.toggle("disable-scroll");
-      this.images = document.getElementsByTagName("IMG");
+      this.images = document.images;
       this.imagesCount = this.images.length;
       console.log("Картинок " + this.imagesCount);
       if (this.imagesCount > 0) {

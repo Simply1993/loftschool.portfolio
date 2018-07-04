@@ -9,7 +9,8 @@ new Vue({
     email: null,
     msg: null,
     url: null,
-    success: false
+    success: false,
+    unsuccess: false
   },
   methods: {
     sendForm: function(e) {
@@ -35,6 +36,10 @@ new Vue({
             console.log(error);
           });
       } else {
+        this.unsuccess = true;
+        setTimeout(() => {
+          this.unsuccess = false;
+        }, 2000);
         console.log(this.errors);
       }
     },

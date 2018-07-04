@@ -1,5 +1,8 @@
 import "./modules/preloader";
 import { fullscreenMenu } from "./modules/fullscreen";
+import { blogSidebar } from "./modules/blogSidebar";
+var sidebarMenu = blogSidebar();
+sidebarMenu.init();
 var menu = fullscreenMenu();
 menu.init();
 

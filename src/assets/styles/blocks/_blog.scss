@@ -8,6 +8,9 @@
 	width: 25%;
 	padding-left: 60px;
 	transition: .3s;
+	align-self: flex-start;
+	position: sticky;
+	top: 40px;
 	@include tablets {
 		display: flex;
 		align-items: center;

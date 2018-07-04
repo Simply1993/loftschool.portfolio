@@ -9,12 +9,20 @@ const skill = {
   methods: {
     drawCircle() {
       const circle = this.$refs["circle"];
+      const figure = this.$refs["figure"];
       const dashOffset = parseInt(
         getComputedStyle(circle).getPropertyValue("stroke-dashoffset")
       );
       const persents = (dashOffset / 100) * (100 - this.skillValue);
 
-      circle.style.strokeDashoffset = persents;
+      window.addEventListener("scroll", function() {
+        const positionTop = figure.getBoundingClientRect().top;
+        const top = positionTop.toFixed();
+        if (top > 350 && top < 600) {
+          figure.style.opacity = 0.9;
+          circle.style.strokeDashoffset = persents;
+        }
+      });
     }
   },
   mounted() {
