@@ -1,5 +1,6 @@
 import Vue from "vue";
 import axios from "axios";
+//import helpers from "/admin/helpers";
 
 const welcomeFront = {
   template: "#box-front"
@@ -18,6 +19,23 @@ const welcomeBack = {
     };
   },
   methods: {
+    loginUser: function(user) {
+      axios
+        .post("http://webdev-api.loftschool.com/login", user)
+        .then(response => {
+          console.log(response);
+          if (response.status === 200) {
+            const token = response.data.token;
+            const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+            localStorage.setItem("token", token);
+            localStorage.setItem("ttl", ttl);
+            window.location.href = "/admin";
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
     checkForm: function() {
       this.errors = [];
       if (this.login && this.password && this.noRobot && this.robot === "yes")
@@ -45,27 +63,11 @@ const welcomeBack = {
     sendForm: function(e) {
       this.url = e.target.action;
       if (this.checkForm()) {
-        let fields = {
-          login: this.login,
-          password: this.password,
-          noRobot: this.noRobot,
-          robot: this.robot
+        let user = {
+          name: this.login,
+          password: this.password
         };
-        axios
-          .post(this.url, fields)
-          .then(response => {
-            this.success = true;
-            setTimeout(() => {
-              this.success = false;
-              console.log(e);
-              e.target.reset();
-            }, 2000);
-            console.log(response);
-            console.log(response);
-          })
-          .catch(error => {
-            console.log(error);
-          });
+        this.loginUser(user);
       } else {
         this.unsuccess = true;
         setTimeout(() => {
