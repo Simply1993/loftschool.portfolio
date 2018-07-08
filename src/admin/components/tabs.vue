@@ -1,7 +1,10 @@
 <template lang="pug">
 .tabs
   ul.tabs__list
-    li.tabs__item(v-for="tab in tabs")
+    li.tabs__item(
+      v-for="tab in tabs"
+      :class='{"tabs__item--active": currentUrl == tab.href}'
+    )
       router-link(
         :to="tab.href"
       ).tabs__link {{tab.title}}
@@ -13,10 +16,26 @@ export default {
     return {
       tabs: [
         { title: "Обо мне", href: "/" },
-        { title: "Работы", href: "/works" },
-        { title: "Блог", href: "/blog" }
-      ]
+        { title: "Блог", href: "/blog" },
+        { title: "Работы", href: "/works" }
+      ],
+      urlPage: window.location.pathname
     };
+  },
+  computed: {
+    currentUrl: {
+      get: function() {
+        return this.urlPage;
+      },
+      set: function(newValue) {
+        this.urlPage = newValue;
+      }
+    }
+  },
+  watch: {
+    $route(to, from) {
+      this.currentUrl = to.path;
+    }
   }
 };
 </script>

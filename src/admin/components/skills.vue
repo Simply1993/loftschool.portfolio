@@ -14,7 +14,7 @@
 
 <script>
 import skillsRow from "./skillsRow.vue";
-import { mapState, mapActions, mapGetters } from "vuex";
+import { mapState, mapActions, mapGetters, mapMutations } from "vuex";
 
 export default {
   components: {
@@ -35,6 +35,12 @@ export default {
     }),
     ...mapGetters(["userId"])
   },
+  /*watch: {
+    skills: function() {
+      console.log("change skills " + Date.now());
+      //this.getSkills(this.userId);
+    }
+  },*/
   created() {
     this.getUser().then(response => {
       this.getSkills(this.userId);
@@ -49,13 +55,6 @@ export default {
 <style lang="scss" scoped>
 .skills {
   /*width: 70%;*/
-}
-
-.content__title {
-  margin: 0 0 35px;
-  color: $text-color;
-  font-size: 21px;
-  font-weight: 500;
 }
 
 .skills__item {

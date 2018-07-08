@@ -5,7 +5,7 @@ const skills = {
   },
   //методы, изменяющие данные
   mutations: {
-    setStateSkills(state, skills) {
+    setListSkills(state, skills) {
       state.skillsItems = skills;
     },
     addNewSkill(state, skill) {
@@ -25,7 +25,7 @@ const skills = {
         .then(
           response => {
             if (response.status === 200) {
-              store.commit("setStateSkills", response.data);
+              store.commit("setListSkills", response.data);
             }
           },
           error => console.log(error)
@@ -37,8 +37,9 @@ const skills = {
         .post("/skills", skill)
         .then(
           response => {
-            if (response.status === 200) {
+            if (response.status === 201) {
               store.commit("addNewSkill", response.data);
+              console.log("addSkill", response.data);
             }
           },
           error => console.log(error)
@@ -55,6 +56,7 @@ const skills = {
           response => {
             if (response.status === 200) {
               store.commit("removeExSkill", response.data);
+              console.log("removeSkill", response.data);
             }
           },
           error => console.log(error)

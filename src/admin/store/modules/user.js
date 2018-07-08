@@ -35,10 +35,12 @@ const user = {
     },
     logout(store) {
       return this.$axios.post("/logout").then(response => {
-        console.log("logout response", response);
-        localStorage.removeItem("token");
-        localStorage.removeItem("ttl");
-        store.commit("clearUser");
+        if (response.status === 200) {
+          console.log("logout response", response);
+          localStorage.removeItem("token");
+          localStorage.removeItem("ttl");
+          store.commit("clearUser");
+        }
       });
     }
   }

@@ -10,8 +10,8 @@ const welcomeBack = {
   data: function() {
     return {
       errors: [],
-      login: null,
-      password: null,
+      login: "scherbacovAdmin",
+      password: "scherbacov1993",
       noRobot: null,
       robot: null,
       success: false,
@@ -22,18 +22,28 @@ const welcomeBack = {
     loginUser: function(user) {
       axios
         .post("http://webdev-api.loftschool.com/login", user)
-        .then(response => {
-          console.log(response);
-          if (response.status === 200) {
-            const token = response.data.token;
-            const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
-            localStorage.setItem("token", token);
-            localStorage.setItem("ttl", ttl);
-            window.location.href = "/admin";
+        .then(
+          response => {
+            console.log(response);
+            if (response.status === 200) {
+              const token = response.data.token;
+              const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+              localStorage.setItem("token", token);
+              localStorage.setItem("ttl", ttl);
+              window.location.href = "/admin";
+            }
+          },
+          error => {
+            console.log(error.response.data.error);
+            this.errors.push(error.response.data.error);
+            this.unsuccess = true;
+            setTimeout(() => {
+              this.unsuccess = false;
+            }, 2000);
           }
-        })
+        )
         .catch(error => {
-          console.log(error);
+          console.error(error);
         });
     },
     checkForm: function() {

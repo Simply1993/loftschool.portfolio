@@ -11,12 +11,30 @@ const guard = axios.create({
 import header from "./components/header.vue";
 import tabs from "./components/tabs.vue";
 import skills from "./components/skills.vue";
+import works from "./components/works.vue";
+import blog from "./components/blog.vue";
 
 const routes = [
   {
     path: "/",
     components: {
       default: skills,
+      header: header,
+      tabs: tabs
+    }
+  },
+  {
+    path: "/works",
+    components: {
+      default: works,
+      header: header,
+      tabs: tabs
+    }
+  },
+  {
+    path: "/blog",
+    components: {
+      default: blog,
       header: header,
       tabs: tabs
     }

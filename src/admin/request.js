@@ -17,15 +17,17 @@ axios.interceptors.response.use(
     const originalRequest = error.config;
     if (DateNow > ttl && error.response.status === 401) {
       axios.post("/refreshToken").then(response => {
-        helpers.setTokenTtl(response);
-        axios.defaults.headers[
-          "Authorization"
-        ] = `Bearer ${localStorage.getItem("token")}`;
-        originalRequest.headers[
-          "Authorization"
-        ] = `Bearer ${localStorage.getItem("token")}`;
+        if (response.status === 200) {
+          helpers.setTokenTtl(response);
+          axios.defaults.headers[
+            "Authorization"
+          ] = `Bearer ${localStorage.getItem("token")}`;
+          originalRequest.headers[
+            "Authorization"
+          ] = `Bearer ${localStorage.getItem("token")}`;
 
-        return axios(originalRequest);
+          return axios(originalRequest);
+        }
       });
     }
 

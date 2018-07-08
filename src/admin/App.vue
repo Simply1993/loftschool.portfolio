@@ -3,7 +3,8 @@
   router-view(name="header")
   router-view(name="tabs")
   .content
-    router-view
+    transition(name="fade-out" mode="out-in")
+      router-view
 </template>
 
 <script>
@@ -24,6 +25,7 @@ export default {
 * {
   box-sizing: border-box;
 }
+
 body,
 html {
   margin: 0;
@@ -67,5 +69,33 @@ body {
 
 .content {
   position: relative;
+}
+
+.content__title {
+  margin: 0 0 35px;
+  color: $text-color;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.fade-out-enter-active,
+.fade-out-leave-active {
+  transition: 0.4s;
+}
+
+.fade-out-leave {
+  opacity: 1;
+}
+
+.fade-out-leave-to {
+  opacity: 0;
+}
+
+.fade-out-enter {
+  opacity: 0;
+}
+
+.fade-out-enter-to {
+  opacity: 1;
 }
 </style>

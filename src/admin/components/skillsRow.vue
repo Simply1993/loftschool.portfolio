@@ -34,7 +34,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .skills-row__title {
   color: $text-color;
   margin: 0 0 15px;
