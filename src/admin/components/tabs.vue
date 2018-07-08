@@ -3,7 +3,7 @@
   ul.tabs__list
     li.tabs__item(
       v-for="tab in tabs"
-      :class='{"tabs__item--active": currentUrl == tab.href}'
+      :class='{"tabs__item--active": urlPage == tab.href}'
     )
       router-link(
         :to="tab.href"
@@ -22,19 +22,9 @@ export default {
       urlPage: window.location.pathname
     };
   },
-  computed: {
-    currentUrl: {
-      get: function() {
-        return this.urlPage;
-      },
-      set: function(newValue) {
-        this.urlPage = newValue;
-      }
-    }
-  },
   watch: {
     $route(to, from) {
-      this.currentUrl = to.path;
+      this.urlPage = to.path;
     }
   }
 };

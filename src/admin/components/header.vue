@@ -4,7 +4,7 @@ header.header
     .header__left
       h1.header__title Панель администрирования
     .header__right
-      a.header__link(@click="logout()") Вернуться на сайт
+      a.header__link(@click="logoutUser") Вернуться на сайт
 </template>
 
 <script>
@@ -12,7 +12,12 @@ import { mapActions } from "vuex";
 
 export default {
   methods: {
-    ...mapActions["logout"]
+    ...mapActions(["logout"]),
+    logoutUser() {
+      this.logout().then(response => {
+        console.log("logout user");
+      });
+    }
   }
 };
 </script>

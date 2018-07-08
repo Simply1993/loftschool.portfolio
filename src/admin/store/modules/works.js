@@ -19,7 +19,7 @@ const works = {
   actions: {
     getWorks(store, userId) {
       return this.$axios
-        .get(`/posts/${userId}`)
+        .get(`/works/${userId}`)
         .then(
           response => {
             if (response.status === 200) {
@@ -32,10 +32,11 @@ const works = {
     },
     addWork(store, work) {
       return this.$axios
-        .post("/posts", work)
+        .post("/works", work)
         .then(
           response => {
             if (response.status === 201) {
+              console.log("addWork", response.data);
               store.commit("addNewWork", response.data);
             }
           },
@@ -45,7 +46,7 @@ const works = {
     },
     removeWork(store, workId) {
       return this.$axios
-        .delete(`/posts/${workId}`)
+        .delete(`/works/${workId}`)
         .then(
           response => {
             if (response.status === 200) {

@@ -34,14 +34,23 @@ const user = {
         .catch(e => console.error(e));
     },
     logout(store) {
-      return this.$axios.post("/logout").then(response => {
-        if (response.status === 200) {
-          console.log("logout response", response);
-          localStorage.removeItem("token");
-          localStorage.removeItem("ttl");
-          store.commit("clearUser");
-        }
-      });
+      return this.$axios
+        .post("/logout")
+        .then(
+          response => {
+            if (response.status === 200) {
+              console.log("logout response", response);
+              localStorage.removeItem("token");
+              localStorage.removeItem("ttl");
+              store.commit("clearUser");
+              window.location.href = "//google.com";
+            }
+          },
+          error => {
+            console.log(error);
+          }
+        )
+        .catch(e => console.error(e));
     }
   }
 };
