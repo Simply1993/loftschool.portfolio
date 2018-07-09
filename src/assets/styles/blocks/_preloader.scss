@@ -13,51 +13,36 @@
 	background-position: center;
 	z-index: 50;
 	transition: opacity .5s;
-	/*&--hide {
+	&--hide {
 		opacity: 0;
 		z-index: 0;
-	}*/
+	}
 }
 
-.preloader__svg {
+.preloader__text {
 	fill: $white;
-	stroke: $white;
 }
 
-.ocean {
-	bottom:0;
-	left:0;
-	height: 80px;
-	width: 80px;
-	position: relative;
-	overflow: hidden;
+@keyframes load {
+	to {
+		stroke-dasharray: 200;
+		stroke-dashoffset: -100
+	}
 }
 
 .wave {
-	background: url("../images/wave.svg") repeat-x;
-	position: absolute;
-	top: 0;
-	width: 100px;
-	height: 55px;
-	animation: wave 1.5s ease-in-out .2s infinite;
-	transform: translate3d(0, 0, 0);
+	fill: none;
+	stroke: #ffffff;
+	stroke-dasharray: 100;
+	stroke-dashoffset: 100;
+	transition: all .6s ease;
+	animation: load 1s cubic-bezier(1, 0, .8, .65) infinite;
 }
 
-.wave:nth-of-type(2) {
-	top: 20px;
-	animation: wave 1.5s ease-in-out .4s infinite;
+.wave--2 {
+	animation-delay: .15s
 }
 
-.wave:nth-of-type(3) {
-	top: -20px;
-	animation: wave 1.5s ease-in-out infinite;
-}
-
-@keyframes wave {
-	0% {
-		margin-left: -100px;
-	}
-	100% {
-		margin-left: 100px;
-	}
+.wave--3 {
+	animation-delay: .3s
 }
