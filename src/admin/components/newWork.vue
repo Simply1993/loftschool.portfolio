@@ -59,9 +59,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/styles/layout/mixins";
+
 .btn {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
   color: $white;
   display: inline-block;
   cursor: pointer;
@@ -88,7 +90,7 @@ export default {
     margin-right: 15px;
     width: 35px;
     height: 35px;
-    background-image: url("../file-pic.svg");
+    background-image: url("../../assets/images/file-pic.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -115,12 +117,12 @@ export default {
   padding: 0 20px;
   font-weight: 400;
   margin-bottom: 20px;
-}
-
-.work__input {
   height: 45px;
   width: 300px;
   font-size: 16px;
+  @include phones {
+    width: 100%;
+  }
 }
 
 .work__label {
@@ -132,7 +134,7 @@ export default {
 .new-work__title {
   color: $text-color;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .work__file-upload {

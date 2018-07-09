@@ -6,9 +6,6 @@ export var blogSidebar = function() {
     titleArticles = articlesList.getElementsByClassName("articles__item-title"), //blogItems
     sidebarItems = document.getElementsByClassName("nav-blog__item"); //menuItems
 
-  console.log(articlesList);
-  console.log(titleArticles);
-  console.log(sidebarItems);
   let addListener = () => {
     //Array.prototype.slice.call
     //scroll to article's header

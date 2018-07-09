@@ -38,9 +38,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/styles/layout/mixins";
+
 .btn {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
   color: $white;
   display: inline-block;
   cursor: pointer;
@@ -78,6 +80,9 @@ export default {
   height: 45px;
   width: 300px;
   font-size: 16px;
+  @include phones {
+    width: 100%;
+  }
 }
 
 .article__textarea {
@@ -85,6 +90,9 @@ export default {
   line-height: 43px;
   width: 500px;
   font-size: 16px;
+  @include phones {
+    width: 100%;
+  }
 }
 
 .article__label {
@@ -96,6 +104,6 @@ export default {
 .new-article__title {
   color: $text-color;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
 }
 </style>

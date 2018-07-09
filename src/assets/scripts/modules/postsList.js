@@ -1,5 +1,6 @@
 import Vue from "vue";
 import axios from "axios";
+import helpers from "../../../admin/helpers";
 
 const post = {
   template: "#post",
@@ -7,6 +8,11 @@ const post = {
     post: {
       type: Object,
       default: () => []
+    }
+  },
+  computed: {
+    formatedDate: function() {
+      return helpers.dateView(this.post.date);
     }
   }
 };

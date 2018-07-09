@@ -48,7 +48,7 @@ body {
   overflow: hidden;
   min-height: 100%;
   position: relative;
-  background-image: url("./welcome-bg.jpg");
+  background-image: url("../assets/images/welcome-bg.jpg");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
@@ -71,13 +71,19 @@ body {
 
 .content {
   position: relative;
+  @include desktop {
+    width: 70%;
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
 .content__title {
   margin: 0 0 35px;
   color: $text-color;
   font-size: 21px;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .fade-out-enter-active,

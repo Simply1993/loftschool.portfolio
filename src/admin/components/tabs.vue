@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../assets/styles/layout/mixins";
+
 .tabs {
   position: relative;
   margin-bottom: 40px;
@@ -43,6 +45,9 @@ export default {
   list-style: none;
   padding: 0;
   margin: 0;
+  @include phones {
+    flex-direction: column;
+  }
 }
 .tabs__item {
   background-color: #f0efe9;
@@ -55,11 +60,20 @@ export default {
       color: $pale-green;
     }
   }
+  @include tablets {
+    flex: 1;
+    text-align: center;
+  }
+  @include phones {
+    border-right: none;
+    border-top: 2px solid $white;
+  }
 }
 .tabs__link {
   text-decoration: none;
   padding: 20px 70px;
   display: block;
   color: #566358;
+  font-weight: bold;
 }
 </style>

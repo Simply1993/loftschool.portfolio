@@ -39,7 +39,7 @@ export default {
   color: $text-color;
   margin: 0 0 15px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .skills-row__list {

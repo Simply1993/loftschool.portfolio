@@ -53,13 +53,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/styles/layout/mixins";
+
 .skills {
-  /*width: 70%;*/
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .skills__item {
   display: inline-flex;
   margin-bottom: 25px;
   margin-right: 60px;
+  @include phones {
+    margin-right: 0;
+  }
 }
 </style>

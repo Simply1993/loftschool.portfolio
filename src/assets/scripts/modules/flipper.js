@@ -1,5 +1,6 @@
 import Vue from "vue";
 import axios from "axios";
+import helpers from "../../../admin/helpers";
 
 const welcomeFront = {
   template: "#box-front"
@@ -25,10 +26,7 @@ const welcomeBack = {
           response => {
             console.log(response);
             if (response.status === 200) {
-              const token = response.data.token;
-              const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
-              localStorage.setItem("token", token);
-              localStorage.setItem("ttl", ttl);
+              helpers.setTokenTtl(response);
               window.location.href = "/admin";
             }
           },
