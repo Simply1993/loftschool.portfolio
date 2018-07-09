@@ -22,6 +22,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/styles/layout/mixins";
+
 * {
   box-sizing: border-box;
 }

@@ -1,4 +1,6 @@
 import "./modules/preloader";
+import "./modules/postsMenu";
+import "./modules/postsList";
 import { fullscreenMenu } from "./modules/fullscreen";
 import { blogSidebar } from "./modules/blogSidebar";
 var sidebarMenu = blogSidebar();
