@@ -15,9 +15,9 @@ export default {
   data() {
     return {
       tabs: [
-        { title: "Обо мне", href: "/admin" },
-        { title: "Блог", href: "/admin/blog" },
-        { title: "Работы", href: "/admin/works" }
+        { title: "Обо мне", href: "/loftschool.portfolio/dist/admin" },
+        { title: "Блог", href: "/loftschool.portfolio/dist/admin/blog" },
+        { title: "Работы", href: "/loftschool.portfolio/dist/admin/works" }
       ],
       urlPage: window.location.pathname
     };
