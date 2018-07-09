@@ -43,7 +43,7 @@ const user = {
               localStorage.removeItem("token");
               localStorage.removeItem("ttl");
               store.commit("clearUser");
-              window.location.href = "./";
+              window.location.href = "/loftschool.portfolio/dist/";
             }
           },
           error => {

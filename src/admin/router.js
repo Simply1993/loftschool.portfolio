@@ -16,7 +16,7 @@ import blog from "./components/blog.vue";
 
 const routes = [
   {
-    path: "/admin",
+    path: "/loftschool.portfolio/dist/admin",
     components: {
       default: skills,
       header: header,
@@ -24,7 +24,7 @@ const routes = [
     }
   },
   {
-    path: "/admin/works",
+    path: "/loftschool.portfolio/dist/admin/works",
     components: {
       default: works,
       header: header,
@@ -32,7 +32,7 @@ const routes = [
     }
   },
   {
-    path: "/admin/blog",
+    path: "/loftschool.portfolio/dist/admin/blog",
     components: {
       default: blog,
       header: header,
@@ -56,7 +56,7 @@ router.beforeEach((to, from, next) => {
     .catch(error => {
       console.log(error);
       localStorage.removeItem("token");
-      window.location.href = "./";
+      window.location.href = "/loftschool.portfolio/dist/";
     });
 });
 
