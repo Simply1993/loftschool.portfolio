@@ -15,9 +15,9 @@ export default {
   data() {
     return {
       tabs: [
-        { title: "Обо мне", href: "/" },
-        { title: "Блог", href: "/blog" },
-        { title: "Работы", href: "/works" }
+        { title: "Обо мне", href: "/admin" },
+        { title: "Блог", href: "/admin/blog" },
+        { title: "Работы", href: "/admin/works" }
       ],
       urlPage: window.location.pathname
     };

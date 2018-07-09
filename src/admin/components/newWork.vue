@@ -13,6 +13,8 @@
       label.btn.btn--file(for="picture") {{currentFile}}
       input.work__file-input#picture(type="file" @change="addPhoto")
     button.btn(@click="add") Добавить
+    .work__success(:class='{"work__success--active": success == true}')
+      .work__success-message {{textMsg}}
 </template>
 
 <script>
@@ -27,6 +29,8 @@ export default {
         link: "",
         photo: ""
       },
+      textMsg: "",
+      success: false,
       currentFile: "Загрузить картинку"
     };
   },
@@ -46,13 +50,35 @@ export default {
         formData.append(prop, this.newWork[prop]);
       });
 
-      this.addWork(formData).then(response => {
-        this.newWork.title = "";
-        this.newWork.techs = "";
-        this.newWork.link = "";
-        this.newWork.photo = "";
-        this.currentFile = "Загрузить картинку";
-      });
+      this.addWork(formData)
+        .then(
+          response => {
+            this.newWork.title = "";
+            this.newWork.techs = "";
+            this.newWork.link = "";
+            this.newWork.photo = "";
+            this.currentFile = "Загрузить картинку";
+            this.textMsg = "Добавлена новая работа";
+            this.success = true;
+            setTimeout(() => {
+              this.success = false;
+            }, 2000);
+          },
+          error => {
+            this.textMsg = "Ошибка добавления";
+            this.success = true;
+            setTimeout(() => {
+              this.success = false;
+            }, 2000);
+          }
+        )
+        .catch(e => {
+          this.textMsg = "Ошибка добавления";
+          this.success = true;
+          setTimeout(() => {
+            this.success = false;
+          }, 2000);
+        });
     }
   }
 };
@@ -60,6 +86,34 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/styles/layout/mixins";
+
+.work__success {
+  color: black;
+  position: absolute;
+  opacity: 0;
+  height: 100px;
+  width: 350px;
+  top: 50%;
+  left: -9999px;
+  z-index: 20;
+  padding: 20px;
+  background-color: rgba(256, 256, 256, 0.9);
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+  &--active {
+    opacity: 1;
+    left: 50%;
+  }
+}
+
+.work__success-message {
+  display: block;
+}
 
 .btn {
   font-size: 16px;

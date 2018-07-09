@@ -9,6 +9,8 @@
       span %
     .btns
       button(@click="remove" type="button" class="btn btn--remove") х
+  .skill__success(:class='{"skill__success--active": success == true}')
+    .skill__success-message {{textMsg}}
 
 .skill.skill--new(v-else)
   .skill__title
@@ -29,6 +31,8 @@
       span %
     .btns
       button(@click="add" type="button" class="btn btn--add") +
+  .skill__success(:class='{"skill__success--active": success == true}')
+    .skill__success-message {{textMsg}}
 </template>
 
 <script>
@@ -55,19 +59,48 @@ export default {
         title: "",
         percents: "",
         category: this.typeId
-      }
+      },
+      textMsg: "",
+      success: false
     };
   },
   methods: {
     ...mapActions(["removeSkill", "addSkill"]),
     add() {
-      this.addSkill(this.newSkill).then(response => {
-        this.newSkill.title = "";
-        this.newSkill.percents = "";
-      });
+      this.addSkill(this.newSkill)
+        .then(
+          response => {
+            this.newSkill.title = "";
+            this.newSkill.percents = "";
+            this.textMsg = "Добавлено новое умение";
+            this.success = true;
+            setTimeout(() => {
+              this.success = false;
+            }, 2000);
+          },
+          error => {
+            this.textMsg = "Ошибка добавления";
+            this.success = true;
+            setTimeout(() => {
+              this.success = false;
+            }, 2000);
+          }
+        )
+        .catch(e => {
+          this.textMsg = "Ошибка добавления";
+          this.success = true;
+          setTimeout(() => {
+            this.success = false;
+          }, 2000);
+        });
     },
     remove() {
       this.removeSkill(this.skill.id);
+      this.textMsg = "Удалено умение";
+      this.success = true;
+      setTimeout(() => {
+        this.success = false;
+      }, 2000);
     }
   }
 };
@@ -75,6 +108,33 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/styles/layout/mixins";
+
+.skill__success {
+  color: black;
+  position: absolute;
+  opacity: 0;
+  height: 100px;
+  width: 350px;
+  left: -9999px;
+  z-index: 20;
+  padding: 20px;
+  background-color: rgba($white, 0.9);
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+  &--active {
+    opacity: 1;
+    left: auto;
+  }
+}
+
+.form__success-message {
+  display: block;
+}
 
 .skill {
   display: flex;

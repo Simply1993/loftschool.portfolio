@@ -2,7 +2,7 @@
 .content_wrap.container
   h2.content__title Страница "Мои работы"
   new-work
-  works-list(:works="works")
+  //works-list(:works="works")
 </template>
 
 <script>

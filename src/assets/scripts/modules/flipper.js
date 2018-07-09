@@ -10,8 +10,8 @@ const welcomeBack = {
   data: function() {
     return {
       errors: [],
-      login: "scherbacovAdmin",
-      password: "scherbacov1993",
+      login: "",
+      password: "",
       noRobot: null,
       robot: null,
       success: false,

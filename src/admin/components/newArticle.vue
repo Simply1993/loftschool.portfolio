@@ -9,6 +9,8 @@
     label.article__label(for="content") Содержание
     textarea.article__textarea#content(v-model="newArticle.content" placeholder="Содержание" rows="3")
     button.btn(@click="add") Добавить
+    .article__success(:class='{"article__success--active": success == true}')
+      .article__success-message {{textMsg}}
 </template>
 
 <script>
@@ -21,17 +23,41 @@ export default {
         title: "",
         date: "",
         content: ""
-      }
+      },
+      textMsg: "",
+      success: false
     };
   },
   methods: {
     ...mapActions(["addArticle"]),
     add() {
-      this.addArticle(this.newArticle).then(response => {
-        this.newArticle.title = "";
-        this.newArticle.date = "";
-        this.newArticle.content = "";
-      });
+      this.addArticle(this.newArticle)
+        .then(
+          response => {
+            this.newArticle.title = "";
+            this.newArticle.date = "";
+            this.newArticle.content = "";
+            this.textMsg = "Добавлена новая статья";
+            this.success = true;
+            setTimeout(() => {
+              this.success = false;
+            }, 2000);
+          },
+          error => {
+            this.textMsg = "Ошибка добавления";
+            this.success = true;
+            setTimeout(() => {
+              this.success = false;
+            }, 2000);
+          }
+        )
+        .catch(e => {
+          this.textMsg = "Ошибка добавления";
+          this.success = true;
+          setTimeout(() => {
+            this.success = false;
+          }, 2000);
+        });
     }
   }
 };
@@ -39,6 +65,34 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/styles/layout/mixins";
+
+.article__success {
+  color: black;
+  position: absolute;
+  opacity: 0;
+  height: 100px;
+  width: 350px;
+  top: 50%;
+  left: -9999px;
+  z-index: 20;
+  padding: 20px;
+  background-color: rgba(256, 256, 256, 0.9);
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+  &--active {
+    opacity: 1;
+    left: 50%;
+  }
+}
+
+.article__success-message {
+  display: block;
+}
 
 .btn {
   font-size: 16px;

@@ -2,7 +2,7 @@
 .content_wrap.container
   h2.content__title Страница "Блог"
   new-article
-  articles(:articles="articles")
+  //articles(:articles="articles")
 </template>
 
 <script>
