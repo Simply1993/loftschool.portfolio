@@ -27,7 +27,7 @@ const welcomeBack = {
             console.log(response);
             if (response.status === 200) {
               helpers.setTokenTtl(response);
-              window.location.href = "/admin";
+              window.location.href = "./admin";
             }
           },
           error => {

@@ -43,7 +43,7 @@ const user = {
               localStorage.removeItem("token");
               localStorage.removeItem("ttl");
               store.commit("clearUser");
-              window.location.href = "//google.com";
+              window.location.href = "./";
             }
           },
           error => {
