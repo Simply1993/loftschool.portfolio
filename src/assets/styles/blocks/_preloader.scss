@@ -19,7 +19,30 @@
 	}
 }
 
-.preloader__svg {
+.preloader__text {
 	fill: $white;
-	stroke: $white;
+}
+
+@keyframes load {
+	to {
+		stroke-dasharray: 200;
+		stroke-dashoffset: -100
+	}
+}
+
+.wave {
+	fill: none;
+	stroke: #ffffff;
+	stroke-dasharray: 100;
+	stroke-dashoffset: 100;
+	transition: all .6s ease;
+	animation: load 1s cubic-bezier(1, 0, .8, .65) infinite;
+}
+
+.wave--2 {
+	animation-delay: .15s
+}
+
+.wave--3 {
+	animation-delay: .3s
 }
