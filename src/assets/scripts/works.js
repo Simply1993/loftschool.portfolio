@@ -1,3 +1,6 @@
+import "./modules/feedback";
+import "./modules/preloader";
+import "./modules/slider";
 import { fullscreenMenu } from "./modules/fullscreen";
 var menu = fullscreenMenu();
 menu.init();
@@ -10,7 +13,7 @@ if (btn_down != null) {
     e.preventDefault();
     let id = btn_down.getAttribute("href");
     let top = document.querySelector(id).offsetTop;
-    window.scroll({
+    window.scrollBy({
       top: top,
       behavior: "smooth"
     });
@@ -22,7 +25,7 @@ if (btn_up != null) {
     e.preventDefault();
     let id = btn_down.getAttribute("href");
     let top = document.querySelector(id).offsetTop;
-    window.scroll({
+    window.scrollBy({
       top: top,
       behavior: "smooth"
     });

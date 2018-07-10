@@ -21,7 +21,7 @@ block content
 
     .blog
         +triangles('')
-        aside.blog__sidebar
+        aside.blog__sidebar.sticky
             ul.nav-blog.nav-blog__list
                 li.nav-blog__item.nav-blog__item--active
                     a.nav-blog__link(href="#") Самое важное в SASS
@@ -31,6 +31,7 @@ block content
                     a.nav-blog__link(href="#") Самый необходимый набор Gulp плагинов
                 li.nav-blog__item
                     a.nav-blog__link(href="#") Почему я выбрал Jade
+            btn.blog__btn
 
         main.blog__content.articles
             h2.articles__title.visually-hidden Мои статьи

@@ -21,24 +21,8 @@ block content
         .works__content
             .works__title
                 h1.title-h1.title-h1--works= title
-            .works__slider
-                .slider
-                    ul.slider__list
-                        li.slider__item
-                            .slider__item-info
-                                .slider__item-description
-                                    h2.title-h2.slider__item-title Сайт школы онлайн образования
-                                    .slider__item-techonologies HTML , CSS, JavaScript
-                                    a.btn.btn--view--rounded-green Посмотреть сайт
-                            .slider__item-display
-                                .slider__item-image-wrap
-                                    img.slider__item-picture(src="./assets/images/slide1.png" alt="Первый слайд")
-                            .slider__item-buttons
-                                .slider__item-nav
-                                    button.slider__item-prev
-                                        +icon('portf_arrow_down', 'slider__icon')
-                                    button.slider__item-next
-                                        +icon('portf_arrow_up', 'slider__icon')
+            .slider-container
+                #slider-component
     section.about-me
         .about-me__content.container
             .about-me-title
@@ -59,24 +43,6 @@ block content
                             footer.reviews__author
                                 .reviews__author-name Сабанцев Владимир
                                 .reviews__author-post - преподаватель
-        .form.about-me__form
-            h2.title-h2.title-h2--color--white.form__title Связаться со мной
-            form.form__area(action='/', method='post')
-                .form__fields
-                    .form__row
-                        .form__field
-                            label.form__label.form__label_input Имя
-                            input.form__input-text(type='text', placeholder='Имя')
-                    .form__row
-                        .form__field
-                            label.form__label.form__label_input Email
-                            input.form__input-text(type='text', placeholder='Email')
-                    .form__row
-                        .form__field
-                            label.form__label.form__label_input Ваше сообщение
-                            textarea.form__input-text.form__input-text--textarea(placeholder='Ваше сообщение' rows='3')
-                .form__row.form__row--controls
-                    button.form__button.form__button-submit(type='submit') Отправить
-                    button.form__button.form__button-clear(type='reset') Очистить
+        #feedback-wrapper
         a.btn-up(href="#works")
             +icon('portf_arrow_up', 'btn-up__icon')

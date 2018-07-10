@@ -47,7 +47,8 @@
 	margin: 0;
 	padding: 0;
 	position: relative;
-	opacity: .9;
+	opacity: 0;
+	transition: opacity .6s;
 }
 
 .skill__figure {
@@ -66,7 +67,7 @@
 	stroke: $green;
 	stroke-dasharray: 251;
 	stroke-dashoffset: 251;
-	transition: stroke-dasharray 1s ease;
+	transition: stroke-dashoffset 1s ease;
 	transition-delay: .1s;
 }
 
