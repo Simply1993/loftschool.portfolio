@@ -187,18 +187,18 @@
     <script type="text/x-template" id="skills">
       <div class="skills">
         <ul class="skills-list">
-          <li class="skills-list__item" v-for="skill in skills">
-            <skills-row :skill="skill"></skills-row>
+          <li class="skills-list__item" v-for="typeItem in types" :key="typeItem.name">
+            <skills-row :typeItem="typeItem" :skills="skills"></skills-row>
           </li>
         </ul>
       </div>
     </script>
     <script type="text/x-template" id="skills-row">
       <div class="skills-row">
-        <div class="skills-row__title">{{skill.skillsGroup}}</div>
+        <div class="skills-row__title">{{typeItem.name}}</div>
         <ul class="skills-row__list">
-          <li class="skills-row__item" v-for="(skillValue, skillName) in skill.skills">
-            <skill :skillName="skillName" :skillValue="skillValue"></skill>
+          <li class="skills-row__item" v-for="skill in skills" v-if="skill.category === typeItem.id" :key="skill.id">
+            <skill :skill="skill"></skill>
           </li>
         </ul>
       </div>
@@ -209,8 +209,28 @@
           <circle class="skill__circle skill__circle_under" cx="50" cy="50" r="40"></circle>
           <circle class="skill__circle skill__circle_above" cx="50" cy="50" r="40" ref="circle"></circle>
         </svg>
-        <div class="skill__title">{{skillName}}</div>
+        <div class="skill__title">{{skill.title}}</div>
       </figure>
+    </script>
+    <script type="text/x-template" id="posts-menu">
+      <ul class="nav-blog nav-blog__list">
+        <li class="nav-blog__item" v-for="(post, key) in posts" :key="post.id" :class="{&quot;nav-blog__item--active&quot;: key === 0}"><a class="nav-blog__link" href="#">{{post.title}}</a></li>
+      </ul>
+    </script>
+    <script type="text/x-template" id="posts-list">
+      <main class="blog__content articles">
+        <h2 class="articles__title visually-hidden">Мои статьи</h2>
+        <post v-for="post in posts" :key="post.id" :post="post"></post>
+      </main>
+    </script>
+    <script type="text/x-template" id="post">
+      <article class="articles__item">
+        <header class="articles__item-header">
+          <h2 class="title-h2 articles__item-title">{{post.title}}</h2>
+          <time class="articles__item-date">{{formatedDate}}</time>
+        </header>
+        <div class="articles__item-content text-content">{{post.content}}</div>
+      </article>
     </script>
     <script type="text/x-template" id="feedback">
       <div class="form about-me__form">
@@ -263,26 +283,26 @@
             <h2 class="title-h2 slider__item-title" :key="work.title">{{work.title}}</h2>
           </transition-group>
           <transition-group appear :css="false" @enter="enterHandler">
-            <div class="slider__item-techonologies" :key="work.skills">{{work.skills}}</div>
+            <div class="slider__item-techonologies" :key="work.techs">{{work.techs}}</div>
           </transition-group><a class="btn btn--view--rounded-green button" :href="work.link" target="_blank">Посмотреть сайт</a>
         </div>
       </div>
     </script>
     <script type="text/x-template" id="slider-display">
       <div class="slider__display">
-        <transition name="fade-out" mode="out-in"><img class="slider__big-pic" :src="work.photo" :key="work.photo"></transition>
+        <transition name="fade-out" mode="out-in"><img class="slider__big-pic" :src="'http://webdev-api.loftschool.com/' + work.photo" :key="work.photo"></transition>
       </div>
     </script>
     <script type="text/x-template" id="slider-buttons">
       <div class="slider__buttons">
         <div class="slider__button slider__button--prev" @click="slide('prev')">
           <transition-group class="slider__button-img-container" name="slide-down" tag="div">
-            <div class="slider__button-img-wrap" :key="getReqImage('prev').photo"><img class="slider__button-pic" :src="getReqImage('prev').photo" alt=""></div>
+            <div class="slider__button-img-wrap" :key="getReqImage('prev').id"><img class="slider__button-pic" :src="'http://webdev-api.loftschool.com/' + getReqImage('prev').photo" alt=""></div>
           </transition-group>
         </div>
         <div class="slider__button slider__button--next" @click="slide('next')">
           <transition-group class="slider__button-img-container" name="slide-up" tag="div">
-            <div class="slider__button-img-wrap" :key="getReqImage('next').photo"><img class="slider__button-pic" :src="getReqImage('next').photo" alt=""></div>
+            <div class="slider__button-img-wrap" :key="getReqImage('next').id"><img class="slider__button-pic" :src="'http://webdev-api.loftschool.com/' + getReqImage('next').photo" alt=""></div>
           </transition-group>
         </div>
       </div>

@@ -1,10 +1,13 @@
 import Vue from "vue";
+import axios from "axios";
 
 const skill = {
   template: "#skill",
   props: {
-    skillName: String,
-    skillValue: Number
+    skill: {
+      type: Object,
+      default: () => {}
+    }
   },
   methods: {
     drawCircle() {
@@ -13,7 +16,7 @@ const skill = {
       const dashOffset = parseInt(
         getComputedStyle(circle).getPropertyValue("stroke-dashoffset")
       );
-      const persents = (dashOffset / 100) * (100 - this.skillValue);
+      const persents = (dashOffset / 100) * (100 - this.skill.percents);
 
       window.addEventListener("scroll", function() {
         const positionTop = figure.getBoundingClientRect().top;
@@ -36,7 +39,14 @@ const skillsRow = {
     skill
   },
   props: {
-    skill: Object
+    typeItem: {
+      type: Object,
+      default: () => {}
+    },
+    skills: {
+      type: Array,
+      default: () => []
+    }
   }
 };
 
@@ -46,11 +56,28 @@ new Vue({
     skillsRow
   },
   data: {
-    skills: {}
+    skills: [],
+    types: [
+      { id: 0, name: "Frontend" },
+      { id: 1, name: "Backend" },
+      { id: 2, name: "Workflow" }
+    ]
   },
   created() {
-    const data = require("../../../data/skills.json");
-    this.skills = data;
+    axios
+      .get("http://webdev-api.loftschool.com/skills/17")
+      .then(
+        response => {
+          console.log(response.data);
+          if (response.status === 200) {
+            this.skills = response.data;
+          }
+        },
+        error => {
+          console.log(error);
+        }
+      )
+      .catch(e => console.error(e));
   },
   template: "#skills"
 });

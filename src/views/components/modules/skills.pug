@@ -1,19 +1,29 @@
 script(type="text/x-template")#skills
     .skills
         ul.skills-list
-            li.skills-list__item(v-for="skill in skills")
-                skills-row(:skill="skill")
+            li.skills-list__item(
+                v-for="typeItem in types"
+                :key="typeItem.name"
+            )
+                skills-row(
+                    :typeItem="typeItem"
+                    :skills="skills"
+                )
 
 script(type="text/x-template")#skills-row
     .skills-row
-        .skills-row__title {{skill.skillsGroup}}
+        .skills-row__title {{typeItem.name}}
         ul.skills-row__list
-            li.skills-row__item(v-for="(skillValue, skillName) in skill.skills")
-                skill(:skillName="skillName", :skillValue="skillValue")
+            li.skills-row__item(
+                v-for="skill in skills"
+                v-if="skill.category === typeItem.id"
+                :key="skill.id"
+            )
+                skill(:skill="skill")
 
 script(type="text/x-template")#skill
     figure(ref="figure").skill
         svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
             circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
             circle(cx="50" cy="50" r="40" ref="circle").skill__circle.skill__circle_above
-        .skill__title {{skillName}}
+        .skill__title {{skill.title}}

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import axios from "axios";
+import helpers from "../../../admin/helpers";
 
 const welcomeFront = {
   template: "#box-front"
@@ -9,8 +10,8 @@ const welcomeBack = {
   data: function() {
     return {
       errors: [],
-      login: null,
-      password: null,
+      login: "",
+      password: "",
       noRobot: null,
       robot: null,
       success: false,
@@ -18,6 +19,30 @@ const welcomeBack = {
     };
   },
   methods: {
+    loginUser: function(user) {
+      axios
+        .post("http://webdev-api.loftschool.com/login", user)
+        .then(
+          response => {
+            console.log(response);
+            if (response.status === 200) {
+              helpers.setTokenTtl(response);
+              window.location.href = "./admin";
+            }
+          },
+          error => {
+            console.log(error.response.data.error);
+            this.errors.push(error.response.data.error);
+            this.unsuccess = true;
+            setTimeout(() => {
+              this.unsuccess = false;
+            }, 2000);
+          }
+        )
+        .catch(error => {
+          console.error(error);
+        });
+    },
     checkForm: function() {
       this.errors = [];
       if (this.login && this.password && this.noRobot && this.robot === "yes")
@@ -45,27 +70,11 @@ const welcomeBack = {
     sendForm: function(e) {
       this.url = e.target.action;
       if (this.checkForm()) {
-        let fields = {
-          login: this.login,
-          password: this.password,
-          noRobot: this.noRobot,
-          robot: this.robot
+        let user = {
+          name: this.login,
+          password: this.password
         };
-        axios
-          .post(this.url, fields)
-          .then(response => {
-            this.success = true;
-            setTimeout(() => {
-              this.success = false;
-              console.log(e);
-              e.target.reset();
-            }, 2000);
-            console.log(response);
-            console.log(response);
-          })
-          .catch(error => {
-            console.log(error);
-          });
+        this.loginUser(user);
       } else {
         this.unsuccess = true;
         setTimeout(() => {
