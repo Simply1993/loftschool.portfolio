@@ -1,5 +1,4 @@
 import Vue from "vue";
-import axios from "axios";
 
 const info = {
   template: "#slider-info",
@@ -130,28 +129,9 @@ new Vue({
       this.currentWork = this.works[value];
     }
   },
-  beforeCreate() {
-    console.log("Nothing gets called before me!");
-  },
   created() {
-    // this.works = require("../../../data/works.json");
-    // this.currentWork = this.works[0];
-    axios
-      .get("http://webdev-api.loftschool.com/works/17")
-      .then(
-        response => {
-          console.log("response");
-          console.log(response.data);
-          if (response.status === 200) {
-            this.works = response.data;
-            this.currentWork = this.works[0];
-          }
-        },
-        error => {
-          console.log(error);
-        }
-      )
-      .catch(e => console.error(e));
+    this.works = require("../../../data/works.json");
+    this.currentWork = this.works[0];
   },
   methods: {
     handleSlide(direction) {

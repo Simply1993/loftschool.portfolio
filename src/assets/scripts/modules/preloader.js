@@ -33,6 +33,7 @@ new Vue({
       document.body.classList.toggle("disable-scroll");
       this.images = document.images;
       this.imagesCount = this.images.length;
+      console.log("Картинок " + this.imagesCount);
       if (this.imagesCount > 0) {
         this.percent = 100 / this.imagesCount;
       }
